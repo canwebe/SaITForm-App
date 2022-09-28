@@ -1,9 +1,22 @@
-html,
+:root {
+  --primary-blue: #1a73e8;
+  --input-color: #80868b;
+  --border-color: #dadce0;
+  --form-border: ##cedcf1;
+  --body-background: #e8dff7;
+  --gray-1: #808999;
+  --secondary-purple: #845ec2;
+  --secondary-blue: #2f4fc1;
+  --light-background: #d9f2fd;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--body-background);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 a {
@@ -13,14 +26,48 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+main {
+  min-height: 100vh;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1.5px solid rgb(199, 199, 199);
+  margin: 0 auto;
+  text-align: center;
+  word-spacing: 2px;
+  padding: 15px 10px;
+  color: #80868b;
+  width: 60%;
+  min-width: 300px;
+}
+footer a {
+  font-weight: 500;
+  color: rgb(202, 105, 9);
+}
+
+nav {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.23);
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
