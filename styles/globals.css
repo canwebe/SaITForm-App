@@ -1,7 +1,7 @@
 :root {
   --primary-blue: #1a73e8;
   --input-color: #80868b;
-  --border-color: #dadce0;
+  --border-color: #8f9399;
   --form-border: ##cedcf1;
   --body-background: #e8dff7;
   --gray-1: #808999;
@@ -40,7 +40,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  border-top: 1.5px solid rgb(199, 199, 199);
+  border-top: 1.5px solid rgb(159, 159, 159);
   margin: 0 auto;
   text-align: center;
   word-spacing: 2px;

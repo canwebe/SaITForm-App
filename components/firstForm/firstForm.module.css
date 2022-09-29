@@ -1,12 +1,3 @@
-.secondForm,
-.firstForm {
-  background-color: white;
-  border-radius: 0.5rem;
-  padding: 50px;
-  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* First Div */
 .firstDivWrapper {
   display: flex;
   justify-content: center;
@@ -15,59 +6,20 @@
 }
 
 .firstForm {
-  width: 35%;
-  min-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 60px;
-}
-.firstForm button {
-  margin-top: -5px;
-}
-
-.body {
-  margin: 50px auto;
-  width: 70%;
-  min-width: 700px;
   background-color: white;
+  border-radius: 0.5rem;
   padding: 50px;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
+  width: 35%;
+  min-width: 400px;
+  padding: 60px;
 }
 
 .formDiv {
   height: 48px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
   position: relative;
   width: 100%;
-}
-
-.formDiv select {
-  width: 100%;
-  /* height: 100%; */
-  letter-spacing: 1px;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  outline: none;
-  padding: 0.7rem 1rem;
-  background: none;
-  z-index: 1;
-  font-size: 1.1rem;
-  color: rgb(49, 49, 49);
-  color: var(--input-color);
-  /* appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -webkit-appearance: none; */
-}
-
-.formDiv select option {
-  background-color: var(--border-color);
-}
-
-.formDiv select option {
-  color: rgb(0, 0, 0);
 }
 
 .formDiv input {
@@ -98,8 +50,7 @@
   cursor: text;
 }
 
-.formInput:focus,
-.formDiv select:focus {
+.formInput:focus {
   border: 1.5px solid var(--primary-blue);
 }
 
@@ -113,15 +64,11 @@
   z-index: 2;
 }
 
-.formTwo {
-  display: flex;
-  gap: 20px;
-}
-
 .btnNext {
   background-color: rgb(122, 89, 251);
   color: white;
   padding: 10px 14px;
   width: 150px;
   font-size: 1.25rem;
+  margin-top: -7px;
 }

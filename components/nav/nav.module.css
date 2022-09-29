@@ -32,7 +32,7 @@
 
 .btnNew {
   font-size: 1.13rem;
-  background-color: rgb(62, 51, 212);
+  background-color: var(--primary-blue);
   border-radius: 5px;
   padding: 8px 18px;
   color: white;
@@ -41,9 +41,10 @@
 }
 
 .btnNew:hover {
-  background-color: rgb(36, 28, 141);
+  background-color: #1a64c4;
 }
 
 .btnNew:active {
-  transform: scale(0.95);
+  transform: translateY(2px);
+  background-color: #0e4da0;
 }

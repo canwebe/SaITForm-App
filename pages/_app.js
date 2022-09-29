@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Toaster } from 'react-hot-toast'
 import Footer from '../components/footer'
 import Nav from '../components/nav'
 import '../styles/globals.css'
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
         </div>
         <Footer />
       </main>
+      <Toaster />
     </>
   )
 }
