@@ -1,17 +1,22 @@
+import FormSection from '../formSection'
+import ParentsInformation from '../formParts/ParentsInformation'
 import styles from './secondForm.module.css'
+import CourseInformation from '../formParts/CourseInformation'
+import EducationInformation from '../formParts/EducationInformation'
+import PersonalInformation from '../formParts/PersonalInformation'
 
-export default function SecondForm({ data }) {
-  const { name, mobile } = data
+export default function SecondForm({ name, mobile }) {
   return (
     <form className={styles.form}>
       <p className={styles.bio}>
         Name : <span className={styles.name}>{name}</span> , &nbsp;&nbsp; Mobile
         No : <span className={styles.mobile}>{mobile}</span>
       </p>
-      <div className={styles.formDiv}>
-        <label>Date Of Birth</label>
-        <input type="date" placeholder="Your name" />
-      </div>
+
+      <PersonalInformation />
+      <EducationInformation />
+      <CourseInformation />
+      <ParentsInformation />
     </form>
   )
 }

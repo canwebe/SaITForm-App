@@ -1,0 +1,38 @@
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.formDiv input,
+.formDiv select,
+.formDiv textarea {
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  border: 1px solid var(--border-color);
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  outline: none;
+  margin: 1px;
+  /* background-color: aliceblue; */
+}
+
+.formDiv label {
+  font-weight: 600;
+  /* color: var(--secondary-blue); */
+}
+
+.formDiv input::placeholder {
+  color: var(--border-color);
+}
+
+.formDiv input:focus,
+.formDiv select:focus,
+.formDiv textarea:focus {
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.formDiv input:focus ~ .formDiv label {
+  font-size: 2rem;
+}

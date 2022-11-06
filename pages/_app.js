@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Toaster } from 'react-hot-toast'
 import Footer from '../components/footer'
 import Nav from '../components/nav'
+import FUllDataContextProvider from '../contexts/fullDataContext'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -13,9 +14,12 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <main>
         <Nav />
-        <div className="wrapper">
-          <Component {...pageProps} />
-        </div>
+        <FUllDataContextProvider>
+          <div className="wrapper">
+            <Component {...pageProps} />
+          </div>
+        </FUllDataContextProvider>
+
         <Footer />
       </main>
       <Toaster />

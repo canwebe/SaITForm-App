@@ -33,15 +33,13 @@ a {
 main {
   min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin: auto auto 0;
   border-top: 1.5px solid rgb(159, 159, 159);
-  margin: 0 auto;
   text-align: center;
   word-spacing: 2px;
   padding: 15px 10px;
@@ -56,13 +54,16 @@ footer a {
 
 nav {
   background-color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0;
+  z-index: 99;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.23);
 }
 
 .wrapper {
   width: 90%;
   max-width: 1700px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 button {
@@ -70,4 +71,30 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+/* Layout */
+.formFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: flex-end;
+}
+.subSection h4 {
+  font-size: 1.2rem;
+  /* margin-bottom: 10px; */
+  color: rgb(71, 71, 71);
+  text-decoration: underline;
+}
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

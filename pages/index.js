@@ -4,34 +4,29 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import FirstForm from '../components/firstForm'
 import SecondForm from '../components/secondForm'
+import { useFullData } from '../contexts/fullDataContext'
 import { checkStudent } from '../helper/firebase'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [data, setData] = useState({
-    name: '',
-    mobile: '',
-  })
+  const { name, mobile, dispatch } = useFullData()
 
   const [isNew, setIsNew] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    dispatch({ type: 'CHANGE', name, value })
   }
 
   return (
     <>
       {isNew ? (
-        <SecondForm data={data} handleChange={handleChange} />
+        <SecondForm name={name} mobile={mobile} />
       ) : (
         <FirstForm
           handleChange={handleChange}
-          name={data.name}
-          mobile={data.mobile}
+          name={name}
+          mobile={mobile}
           setIsNew={setIsNew}
         />
       )}
