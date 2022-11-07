@@ -26,10 +26,13 @@ export default function PersonalInformation() {
     dispatch,
   } = useFullData()
 
+  const isAlRequired = admisionType === 'cet' || admisionType === 'comed-k'
+
   const handleChange = (e) => {
     const { name, value } = e.target
     dispatch({ type: 'CHANGE', name, value })
   }
+  console.log(isAlRequired)
 
   return (
     <FormSection title="Personal Information">
@@ -41,29 +44,37 @@ export default function PersonalInformation() {
             type="date"
             placeholder="Enter your DOB"
             onChange={handleChange}
+            required
           />
         </FormDiv>
         <FormDiv title="Sex">
-          <select name="sex" value={sex} onChange={handleChange}>
-            <option value="">Choose Sex</option>
+          <select required name="sex" value={sex} onChange={handleChange}>
+            <option disabled value="">
+              Choose Sex
+            </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </FormDiv>
         <FormDiv title="State">
-          <select name="state" value={state} onChange={handleChange}>
-            <option value="">Choose Sex</option>
+          <select required name="state" value={state} onChange={handleChange}>
+            <option disabled value="">
+              Choose Sex
+            </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </FormDiv>
         <FormDiv title="Nationality">
           <select
+            required
             name="nationality"
             value={nationality}
             onChange={handleChange}
           >
-            <option value="">Choose Sex</option>
+            <option disabled value="">
+              Choose Sex
+            </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
@@ -71,21 +82,31 @@ export default function PersonalInformation() {
       </div>
       <div className="formFlex">
         <FormDiv title="Religion">
-          <select name="religion" value={religion} onChange={handleChange}>
-            <option value="">Choose Sex</option>
+          <select
+            required
+            name="religion"
+            value={religion}
+            onChange={handleChange}
+          >
+            <option disabled value="">
+              Choose Sex
+            </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </FormDiv>
         <FormDiv title="Caste">
-          <select name="caste" value={caste} onChange={handleChange}>
-            <option value="">Choose Sex</option>
+          <select required name="caste" value={caste} onChange={handleChange}>
+            <option disabled value="">
+              Choose Sex
+            </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </FormDiv>
         <FormDiv title="Your Email">
           <input
+            required
             name="email"
             value={email}
             onChange={handleChange}
@@ -97,6 +118,7 @@ export default function PersonalInformation() {
       <div className="formGrid">
         <FormDiv title="Qualification">
           <input
+            required
             name="qualification"
             value={qualification}
             onChange={handleChange}
@@ -106,6 +128,7 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="Board">
           <input
+            required
             name="board"
             value={board}
             onChange={handleChange}
@@ -115,6 +138,7 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="Year of Passing">
           <input
+            required
             name="yearOfPass"
             value={yearOfPass}
             onChange={handleChange}
@@ -135,6 +159,7 @@ export default function PersonalInformation() {
       <div className="formGrid">
         <FormDiv title="Allotted Category">
           <input
+            required
             name="allottedCategory"
             value={allottedCategory}
             onChange={handleChange}
@@ -144,6 +169,7 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="Date of Allotment">
           <input
+            required
             name="dateOfAllotment"
             value={dateOfAllotment}
             onChange={handleChange}
@@ -152,11 +178,14 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="Category">
           <select
+            required
             name="admisionType"
             value={admisionType}
             onChange={handleChange}
           >
-            <option value="">Choose Admission Type</option>
+            <option disabled value="">
+              Choose Admission Type
+            </option>
             <option value="cet">CET</option>
             <option value="comed-k">COMED-K</option>
             <option value="mgmt">MGMT</option>
@@ -166,6 +195,7 @@ export default function PersonalInformation() {
       <div className="formGrid">
         <FormDiv title="CET/COMED-K/MGMT Rank">
           <input
+            required={isAlRequired}
             name="alRank"
             value={alRank}
             onChange={handleChange}
@@ -175,6 +205,7 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="CET/COMED-K/MGMT No">
           <input
+            required={isAlRequired}
             name="alNo"
             value={alNo}
             onChange={handleChange}
@@ -186,6 +217,7 @@ export default function PersonalInformation() {
       <div className="formGrid">
         <FormDiv title="Fee Collected at KEA/COMED-K">
           <input
+            required={isAlRequired}
             name="alFee"
             value={alFee}
             onChange={handleChange}
@@ -195,6 +227,7 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="College Fee Reciept No/Date">
           <input
+            required={isAlRequired}
             name="feeRecieptNo"
             value={feeRecieptNo}
             onChange={handleChange}
@@ -204,6 +237,7 @@ export default function PersonalInformation() {
         </FormDiv>
         <FormDiv title="College Fee Amount Paid">
           <input
+            required={isAlRequired}
             name="amountPaid"
             value={amountPaid}
             onChange={handleChange}

@@ -31,6 +31,7 @@ export default function ParentsInformation() {
         <h4>Father Details</h4>
         <FormDiv title="Father Name">
           <input
+            required
             name="fName"
             value={fName}
             onChange={handleChange}
@@ -41,6 +42,7 @@ export default function ParentsInformation() {
         <div className="formGrid">
           <FormDiv title="Mobile Mo">
             <input
+              required
               name="fMobile"
               value={fMobile}
               onChange={handleChange}
@@ -50,6 +52,7 @@ export default function ParentsInformation() {
           </FormDiv>
           <FormDiv title="Occupation">
             <input
+              required
               name="fOccupation"
               value={fOccupation}
               onChange={handleChange}
@@ -69,6 +72,7 @@ export default function ParentsInformation() {
         </div>
         <FormDiv title="Address">
           <textarea
+            required
             name="fAddress"
             value={fAddress}
             onChange={handleChange}
@@ -80,6 +84,7 @@ export default function ParentsInformation() {
         <h4>Mother Details</h4>
         <FormDiv title="Mother Name">
           <input
+            required
             name="mName"
             value={mName}
             onChange={handleChange}
@@ -90,6 +95,7 @@ export default function ParentsInformation() {
         <div className="formGrid">
           <FormDiv title="Mobile Mo">
             <input
+              required
               name="mMobile"
               value={mMobile}
               onChange={handleChange}
@@ -99,6 +105,7 @@ export default function ParentsInformation() {
           </FormDiv>
           <FormDiv title="Occupation">
             <input
+              required
               name="mOccupation"
               value={mOccupation}
               onChange={handleChange}
@@ -118,6 +125,7 @@ export default function ParentsInformation() {
         </div>
         <FormDiv title="Address">
           <textarea
+            required
             name="mAddress"
             value={mAddress}
             onChange={handleChange}
@@ -130,6 +138,7 @@ export default function ParentsInformation() {
         <div className="formGrid">
           <FormDiv title="Gurdian Name">
             <input
+              required
               name="gName"
               value={gName}
               onChange={handleChange}
@@ -139,6 +148,7 @@ export default function ParentsInformation() {
           </FormDiv>
           <FormDiv title="Mobile Mo">
             <input
+              required
               name="gMobile"
               value={gMobile}
               onChange={handleChange}

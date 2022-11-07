@@ -141,6 +141,8 @@ export const INITIAL_STATE = {
       state: '',
     },
   },
+  imgSrc: '',
+  file: '',
 }
 
 export const courseMap = {

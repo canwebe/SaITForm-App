@@ -21,7 +21,7 @@ export default function EducationInformation() {
   } = educationDetails
 
   const tableData = [
-    { name: '10th', value: ten, varName: 'ten' },
+    { name: '10th', value: ten, varName: 'ten', required: true },
     { name: '11th', value: eleven, varName: 'eleven' },
     { name: '12th', value: twelve, varName: 'twelve' },
     { name: '1 Sem', value: one, varName: 'one' },
@@ -63,10 +63,12 @@ export default function EducationInformation() {
             <div className={s.grid}>
               <FormDiv title="Board">
                 <input
+                  required={item?.required}
                   type="text"
                   value={item.value.board}
                   onChange={(e) => handleChange(e, item.varName)}
                   name="board"
+                  maxLength={15}
                   placeholder="Enter Board"
                 />
               </FormDiv>
@@ -81,9 +83,11 @@ export default function EducationInformation() {
               </FormDiv>
               <FormDiv title="%">
                 <input
+                  required={item?.required}
                   value={item.value.percentage}
                   onChange={(e) => handleChange(e, item.varName)}
                   type="text"
+                  maxLength={3}
                   name="percentage"
                   placeholder="Percentage"
                 />
@@ -91,15 +95,23 @@ export default function EducationInformation() {
 
               <FormDiv title="Class Obtained">
                 <input
+                  required={item?.required}
                   value={item.value.classObtain}
                   onChange={(e) => handleChange(e, item.varName)}
                   type="text"
+                  maxLength={10}
                   name="classObtain"
                   placeholder="Class Obtain"
                 />
               </FormDiv>
+
               <FormDiv title="Year Of Passing">
                 <input
+                  min={2000}
+                  max={2099}
+                  maxLength={4}
+                  minLength={4}
+                  required={item?.required}
                   value={item.value.yearOfPassing}
                   onChange={(e) => handleChange(e, item.varName)}
                   type="text"
@@ -109,19 +121,23 @@ export default function EducationInformation() {
               </FormDiv>
               <FormDiv title="Intstituion">
                 <input
+                  required={item?.required}
                   value={item.value.institution}
                   onChange={(e) => handleChange(e, item.varName)}
                   type="text"
                   name="institution"
+                  maxLength={15}
                   placeholder="Enter Instituion"
                 />
               </FormDiv>
               <FormDiv title="State">
                 <input
+                  required={item?.required}
                   value={item.value.state}
                   onChange={(e) => handleChange(e, item.varName)}
                   type="text"
                   name="state"
+                  maxLength={15}
                   placeholder="Enter State"
                 />
               </FormDiv>

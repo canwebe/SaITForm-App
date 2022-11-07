@@ -17,6 +17,8 @@ export default function FullDataReducer(state, action) {
           },
         },
       }
+    case 'CHANGE_IMG':
+      return { ...state, file: action.file, imgSrc: action.url }
     default:
       return state
   }

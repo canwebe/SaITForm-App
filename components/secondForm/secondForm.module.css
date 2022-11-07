@@ -21,6 +21,30 @@
   font-weight: 500;
 }
 
+.form:global(.clicked) input:required:invalid,
+.form:global(.clicked) select:required:invalid,
+.form:global(.clicked) textarea:required:invalid {
+  border-color: rgb(226, 34, 0);
+}
+
+.form:global(.clicked) input:required:invalid::placeholder,
+.form:global(.clicked) select:required:invalid,
+.form:global(.clicked) textarea:required:invalid::placeholder {
+  color: rgb(244, 125, 104);
+}
+
+.form:global(.clicked) input:required:invalid ~ label,
+.form:global(.clicked) select:required:invalid ~ label,
+.form:global(.clicked) textarea:required:invalid ~ label {
+  color: rgb(241, 97, 71);
+}
+
+.form:global(.clicked) input:required:invalid:focus ~ label,
+.form:global(.clicked) select:required:invalid:focus ~ label,
+.form:global(.clicked) textarea:required:invalid:focus ~ label {
+  color: rgb(255, 38, 0);
+}
+
 /* .formDiv select {
   width: 100%;
 

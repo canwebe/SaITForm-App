@@ -1,6 +1,6 @@
 .formDiv {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 8px;
 }
 .formDiv input,
@@ -18,6 +18,8 @@
 
 .formDiv label {
   font-weight: 600;
+  position: relative;
+  width: fit-content;
   /* color: var(--secondary-blue); */
 }
 
@@ -33,6 +35,16 @@
   margin: 0;
 }
 
-.formDiv input:focus ~ .formDiv label {
-  font-size: 2rem;
+.formDiv input:not(:required) ~ label::after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  background-color: rgb(57, 57, 246);
+  margin-left: 3px;
+}
+
+.formDiv input:focus ~ label {
+  color: var(--primary-blue);
 }

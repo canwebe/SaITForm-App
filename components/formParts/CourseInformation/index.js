@@ -22,16 +22,25 @@ export default function CourseInformation() {
     <FormSection title="Course Information">
       <div className="formFlex">
         <FormDiv title="Choose Degree">
-          <select name="degree" value={degree} onChange={handleDegree}>
-            <option value="">Choose Degree</option>
+          <select required name="degree" value={degree} onChange={handleDegree}>
+            <option disabled value="">
+              Choose Degree
+            </option>
             <option value="ug">UG</option>
             <option value="pg">PG</option>
           </select>
         </FormDiv>
         {degree && (
           <FormDiv title="Course opted for">
-            <select name="course" value={course} onChange={handleCourse}>
-              <option value="">Choose course</option>
+            <select
+              required
+              name="course"
+              value={course}
+              onChange={handleCourse}
+            >
+              <option disabled value="">
+                Choose course
+              </option>
               {courseMap[degree]?.map((item) => (
                 <option key={item.value} value={item.value}>
                   {item.name}
@@ -42,8 +51,15 @@ export default function CourseInformation() {
         )}
         {course !== 'mba' && course !== '' && (
           <FormDiv title="Choose Branch">
-            <select name="branch" value={branch} onChange={handleChange}>
-              <option value="">Choose branch</option>
+            <select
+              required
+              name="branch"
+              value={branch}
+              onChange={handleChange}
+            >
+              <option disabled value="">
+                Choose branch
+              </option>
               {branchMap[course]?.map((item) => (
                 <option key={item.value} value={item.value}>
                   {item.name}
@@ -55,8 +71,15 @@ export default function CourseInformation() {
       </div>
       <div className="formGrid">
         <FormDiv title="Do you need Hostel Facility?">
-          <select name="isHostel" value={isHostel} onChange={handleChange}>
-            <option value="">Choose Answer</option>
+          <select
+            required
+            name="isHostel"
+            value={isHostel}
+            onChange={handleChange}
+          >
+            <option disabled value="">
+              Choose Answer
+            </option>
             <option value="boysHostel">Boys Hostel</option>
             <option value="girlsHostel">Girls Hostel</option>
             <option value="no">Not Required</option>
@@ -64,11 +87,14 @@ export default function CourseInformation() {
         </FormDiv>
         <FormDiv title="Do you require Transport Facility?">
           <select
+            required
             name="isTransport"
             value={isTransport}
             onChange={handleChange}
           >
-            <option value="">Choose Answer</option>
+            <option disabled value="">
+              Choose Answer
+            </option>
             <option value="yes">YES</option>
             <option value="no">NOT Required</option>
           </select>

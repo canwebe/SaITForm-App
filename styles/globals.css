@@ -54,8 +54,6 @@ footer a {
 
 nav {
   background-color: rgb(255, 255, 255);
-  position: sticky;
-  top: 0;
   z-index: 99;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.23);
 }
@@ -97,4 +95,8 @@ button {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+label:focus-within {
+  color: red;
 }

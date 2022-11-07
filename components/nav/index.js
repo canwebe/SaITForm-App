@@ -16,7 +16,12 @@ export default function Nav() {
           </div>
           <p className={styles.p}>Application Form</p>
           <div className={styles.btnWrapper}>
-            <button className={styles.btnNew}>New Form</button>
+            <button
+              onClick={() => window.location.reload()}
+              className={styles.btnNew}
+            >
+              New Form
+            </button>
             <button className={styles.link}>Admin</button>
           </div>
         </div>

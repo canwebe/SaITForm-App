@@ -3,6 +3,9 @@
   overflow-y: scroll;
   margin-right: -15px;
   padding-right: 15px;
+  padding-bottom: 15px;
+  border-top: 2px dashed rgb(162, 162, 162);
+  border-bottom: 2px dashed rgb(162, 162, 162);
 }
 
 .classHeading {
