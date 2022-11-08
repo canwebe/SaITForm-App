@@ -146,7 +146,7 @@ export default function ParentsInformation() {
               placeholder="Your Guardian Name"
             />
           </FormDiv>
-          <FormDiv title="Mobile Mo">
+          <FormDiv title="Mobile No">
             <input
               required
               name="gMobile"
