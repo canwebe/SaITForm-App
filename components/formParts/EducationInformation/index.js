@@ -4,7 +4,8 @@ import s from './educationInfo.module.css'
 import { useFullData } from '../../../contexts/fullDataContext'
 
 export default function EducationInformation() {
-  const { dispatch, educationDetails } = useFullData()
+  const { dispatch, educationDetails, twelveMark, diplomaMark, degreeMark } =
+    useFullData()
 
   const {
     ten,
@@ -38,27 +39,46 @@ export default function EducationInformation() {
     dispatch({ type: 'CHANGE_EDU', name, value, varName })
   }
 
+  const handleInput = (e) => {
+    const { name, value } = e.target
+    dispatch({ type: 'CHANGE', name, value })
+  }
+
   return (
     <FormSection title="Education Information">
-      <div className="formGrid">
+      <div className="formFlex">
         <FormDiv title="12th Total Marks & Percentage">
           <input
             type="text"
-            name="board"
+            name="twelveMark"
+            value={twelveMark}
+            onChange={handleInput}
             placeholder="Enter Marks and Percentage"
           />
         </FormDiv>
         <FormDiv title="Diploma Overall Marks & Percentage">
-          <input type="text" name="board" placeholder="Diploma Marks and %" />
+          <input
+            name="diplomaMark"
+            value={diplomaMark}
+            onChange={handleInput}
+            type="text"
+            placeholder="Diploma Marks and %"
+          />
         </FormDiv>
         <FormDiv title="Degree Overall Marks & Percentage">
-          <input type="text" name="board" placeholder="Degree Marks and %" />
+          <input
+            name="degreeMark"
+            value={degreeMark}
+            onChange={handleInput}
+            type="text"
+            placeholder="Degree Marks and %"
+          />
         </FormDiv>
       </div>
       <div className="formFlex"></div>
       <div className={s.educationWrapper}>
         {tableData.map((item, i) => (
-          <>
+          <div key={i}>
             <p className={s.classHeading}>{item.name}</p>
             <div className={s.grid}>
               <FormDiv title="Board">
@@ -142,7 +162,7 @@ export default function EducationInformation() {
                 />
               </FormDiv>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </FormSection>

@@ -143,10 +143,13 @@ export const INITIAL_STATE = {
   },
   imgSrc: '',
   file: '',
+  twelveMark: '',
+  diplomaMark: '',
+  degreeMark: '',
 }
 
 export const courseMap = {
-  ug: [{ name: 'BE', value: 'be' }],
+  ug: [{ name: 'BE (E-113)', value: 'be' }],
   pg: [
     { name: 'MBA VTU', value: 'mba' },
     { name: 'MTech', value: 'mtech' },

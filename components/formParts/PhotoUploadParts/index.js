@@ -19,7 +19,6 @@ export default function PhotoUploadParts({ setIsClick }) {
     const url = URL.createObjectURL(selected)
     dispatch({ type: 'CHANGE_IMG', file: selected, url })
   }
-  console.log(file, imgSrc)
 
   return (
     <FormSection title="Additional Information">

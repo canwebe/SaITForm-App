@@ -1,25 +1,25 @@
-import FormSection from '../formSection'
-import ParentsInformation from '../formParts/ParentsInformation'
-import styles from './secondForm.module.css'
-import CourseInformation from '../formParts/CourseInformation'
-import EducationInformation from '../formParts/EducationInformation'
-import PersonalInformation from '../formParts/PersonalInformation'
-import { useFullData } from '../../contexts/fullDataContext'
-import PhotoUploadParts from '../formParts/PhotoUploadParts'
+import ParentsInformation from '../components/formParts/ParentsInformation'
+import styles from '../styles/Form.module.css'
+import CourseInformation from '../components/formParts/CourseInformation'
+import EducationInformation from '../components/formParts/EducationInformation'
+import PersonalInformation from '../components/formParts/PersonalInformation'
+import { useFullData } from '../contexts/fullDataContext'
+import PhotoUploadParts from '../components/formParts/PhotoUploadParts'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-export default function SecondForm({ name, mobile }) {
+export default function Form() {
   const [isClick, setIsClick] = useState(false)
 
-  const router = useRouter()
+  const { name, mobile } = useFullData()
 
-  const state = useFullData()
+  const router = useRouter()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     router.push('/check')
   }
+
   return (
     <form
       onSubmit={handleSubmit}
