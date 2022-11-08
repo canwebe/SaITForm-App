@@ -46,10 +46,10 @@ export default function PersonalInformation() {
             required
           />
         </FormDiv>
-        <FormDiv title="Sex">
+        <FormDiv title="Gender">
           <select required name="sex" value={sex} onChange={handleChange}>
             <option disabled value="">
-              Choose Sex
+              Choose Gender
             </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -58,7 +58,7 @@ export default function PersonalInformation() {
         <FormDiv title="State">
           <select required name="state" value={state} onChange={handleChange}>
             <option disabled value="">
-              Choose Sex
+              Choose State
             </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -72,7 +72,7 @@ export default function PersonalInformation() {
             onChange={handleChange}
           >
             <option disabled value="">
-              Choose Sex
+              Choose Nationality
             </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -88,7 +88,7 @@ export default function PersonalInformation() {
             onChange={handleChange}
           >
             <option disabled value="">
-              Choose Sex
+              Choose Religion
             </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -97,7 +97,7 @@ export default function PersonalInformation() {
         <FormDiv title="Caste">
           <select required name="caste" value={caste} onChange={handleChange}>
             <option disabled value="">
-              Choose Sex
+              Choose caste
             </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
