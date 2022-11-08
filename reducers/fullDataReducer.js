@@ -1,3 +1,5 @@
+import { INITIAL_STATE } from '../data/data'
+
 export default function FullDataReducer(state, action) {
   switch (action.type) {
     case 'CHANGE':
@@ -19,6 +21,8 @@ export default function FullDataReducer(state, action) {
       }
     case 'CHANGE_IMG':
       return { ...state, file: action.file, imgSrc: action.url }
+    case 'RESET':
+      return INITIAL_STATE
     default:
       return state
   }

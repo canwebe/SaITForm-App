@@ -13,14 +13,13 @@ function MyApp({ Component, pageProps }) {
         <title>SaITForm</title>
       </Head>
       <main>
-        <Nav />
         <FUllDataContextProvider>
+          <Nav />
           <div className="wrapper">
             <Component {...pageProps} />
           </div>
+          <Footer />
         </FUllDataContextProvider>
-
-        <Footer />
       </main>
       <Toaster />
     </>

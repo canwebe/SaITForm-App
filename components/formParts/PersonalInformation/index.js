@@ -32,11 +32,10 @@ export default function PersonalInformation() {
     const { name, value } = e.target
     dispatch({ type: 'CHANGE', name, value })
   }
-  console.log(isAlRequired)
 
   return (
     <FormSection title="Personal Information">
-      <div className="formGrid">
+      <div className="formFlex">
         <FormDiv title="Date of Birth">
           <input
             name="dob"
@@ -115,7 +114,7 @@ export default function PersonalInformation() {
           />
         </FormDiv>
       </div>
-      <div className="formGrid">
+      <div className="formFlex">
         <FormDiv title="Qualification">
           <input
             required
