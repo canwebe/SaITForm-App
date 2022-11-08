@@ -5,7 +5,7 @@ import EducationInformation from '../components/formParts/EducationInformation'
 import PersonalInformation from '../components/formParts/PersonalInformation'
 import { useFullData } from '../contexts/fullDataContext'
 import PhotoUploadParts from '../components/formParts/PhotoUploadParts'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Form() {
@@ -19,6 +19,12 @@ export default function Form() {
     e.preventDefault()
     router.push('/check')
   }
+
+  useEffect(() => {
+    if (!name || !mobile) {
+      router.push('/')
+    }
+  }, [name, mobile])
 
   return (
     <form
