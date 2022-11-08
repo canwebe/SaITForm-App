@@ -1,0 +1,31 @@
+.educationWrapper {
+  max-height: 300px;
+  overflow-y: scroll;
+  margin-right: -15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  border-top: 2px dashed rgb(162, 162, 162);
+  border-bottom: 2px dashed rgb(162, 162, 162);
+}
+
+.classHeading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(81, 81, 81);
+  margin-top: 10px;
+}
+.classHeading::after {
+  content: '';
+  height: 2px;
+  width: 100px;
+  display: block;
+  background-color: var(--secondary-blue);
+  margin: 5px 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: flex-end;
+  gap: 10px;
+}

@@ -1,0 +1,59 @@
+.form {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 40px 18px;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  width: 70%;
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.bio {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  padding: 0 25px;
+}
+.name,
+.mobile {
+  color: red;
+  font-weight: 500;
+}
+
+.form:global(.clicked) input:required:invalid,
+.form:global(.clicked) select:required:invalid,
+.form:global(.clicked) textarea:required:invalid {
+  border-color: rgb(226, 34, 0);
+}
+
+.form:global(.clicked) input:required:invalid::placeholder,
+.form:global(.clicked) select:required:invalid,
+.form:global(.clicked) textarea:required:invalid::placeholder {
+  color: rgb(244, 125, 104);
+}
+
+.form:global(.clicked) input:required:invalid ~ label,
+.form:global(.clicked) select:required:invalid ~ label,
+.form:global(.clicked) textarea:required:invalid ~ label {
+  color: rgb(241, 97, 71);
+}
+
+.form:global(.clicked) input:required:invalid:focus ~ label,
+.form:global(.clicked) select:required:invalid:focus ~ label,
+.form:global(.clicked) textarea:required:invalid:focus ~ label {
+  color: rgb(255, 38, 0);
+}
+
+.formTwo {
+  display: flex;
+  gap: 20px;
+}
+
+.btnNext {
+  background-color: rgb(122, 89, 251);
+  color: white;
+  padding: 10px 14px;
+  width: 150px;
+  font-size: 1.25rem;
+}

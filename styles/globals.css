@@ -1,9 +1,22 @@
-html,
+:root {
+  --primary-blue: #1a73e8;
+  --input-color: #80868b;
+  --border-color: #8f9399;
+  --form-border: ##cedcf1;
+  --body-background: #e8dff7;
+  --gray-1: #808999;
+  --secondary-purple: #845ec2;
+  --secondary-blue: #2f4fc1;
+  --light-background: #d9f2fd;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--body-background);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 a {
@@ -13,14 +26,90 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+main {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin: auto auto 0;
+  border-top: 1.5px solid rgb(159, 159, 159);
+  text-align: center;
+  word-spacing: 2px;
+  padding: 15px 10px;
+  color: #80868b;
+  width: 60%;
+  min-width: 300px;
+}
+footer a {
+  font-weight: 500;
+  color: rgb(202, 105, 9);
+}
+
+nav {
+  background-color: rgb(255, 255, 255);
+  z-index: 99;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.23);
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1700px;
+  margin-inline: auto;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Layout */
+.formFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.formFlex > * {
+  flex: 1 1 auto;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: flex-end;
+}
+.subSection h4 {
+  font-size: 1.2rem;
+  /* margin-bottom: 10px; */
+  color: rgb(71, 71, 71);
+  text-decoration: underline;
+}
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label:focus-within {
+  color: red;
+}
+
+/* For Print */
+@media print {
+  html,
   body {
-    color: white;
-    background: black;
+    height: initial !important;
+    overflow: initial !important;
+    -webkit-print-color-adjust: exact;
   }
 }

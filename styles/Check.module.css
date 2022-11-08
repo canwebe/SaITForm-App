@@ -1,0 +1,245 @@
+.body {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.formCard,
+.bottomBtnDiv {
+  background-color: white;
+}
+
+.formCard {
+  padding: 30px 10px 20px;
+}
+
+.bottomBtnDiv {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 15px;
+  padding: 30px 40px;
+}
+
+.bottomBtnDiv button,
+.bottomBtnDiv .homeBtn {
+  background-color: var(--secondary-blue);
+  color: white;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.bottomBtnDiv .backBtn {
+  background-color: rgb(188, 2, 2);
+}
+
+.bottomBtnDiv .printBtn {
+  background-color: rgb(7, 103, 7);
+}
+
+/* Print Section */
+
+.printSection {
+  border: 2px dashed rgb(187, 187, 187);
+  position: relative;
+  padding: 30px 7px 20px;
+  border-radius: 7px;
+  margin: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.printGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.printFlex {
+  display: flex;
+  gap: 10px;
+}
+.printFlex > * {
+  flex: 1 1 auto;
+}
+
+.printSection h3 {
+  position: absolute;
+  top: -15px;
+  left: 9px;
+  background-color: white;
+  padding: 0 3px;
+  color: grey;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 90px;
+}
+
+.header h3 {
+  margin-top: 30px;
+}
+.imgDiv {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  width: 130px;
+  font-weight: 500;
+}
+
+.imgDiv .img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Field-Box */
+.fieldBox {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgb(169, 169, 169);
+  z-index: 1;
+  border-radius: 7px;
+  word-break: break-all;
+}
+
+.fieldBox span {
+  font-weight: 600;
+}
+
+/* Table */
+.table,
+.table th,
+.table td {
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.table {
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 15px 5px;
+}
+.table th {
+  background-color: black;
+  color: white;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table th:nth-child(1) {
+  width: 80px;
+}
+.table th:nth-child(4) {
+  width: 60px;
+}
+.table th:nth-child(6) {
+  width: 90px;
+}
+
+/* Checkbox */
+.checkBox {
+  display: flex;
+  gap: 15px;
+}
+.checkBox .checkItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.checkItem svg {
+  font-size: 1.2rem;
+}
+
+/* Declaration */
+.declarationDiv {
+  padding: 10px 30px;
+  margin-top: 20px;
+}
+
+.declarationDiv.high {
+  margin-top: 70px;
+}
+.declarationDiv h2 {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.declarationDiv .course {
+  font-weight: 600;
+}
+
+.upperCase,
+.declarationDiv .course {
+  text-transform: uppercase;
+}
+
+.declarationDiv .info {
+  font-size: 1.1rem;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.declarationDiv .bottomDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 70px;
+}
+
+/* For Page Breaks */
+@media all {
+  .page_break {
+    display: none;
+  }
+}
+
+@media print {
+  .page_break {
+    margin-top: 1rem;
+    display: block;
+    page-break-after: always;
+  }
+
+  .formCard {
+    padding: 0;
+  }
+  .printSection:global(.low) {
+    margin-top: 0;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 30px 10px 20px;
+}
+
+/* Progress Bar */
+.progressDiv {
+  grid-column: span 2;
+  background-color: #ebe9e9;
+  height: 10px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.progressBar {
+  position: absolute;
+  left: 0;
+  border-radius: 25px;
+  height: 100%;
+  background-color: var(--secondary-purple);
+}
