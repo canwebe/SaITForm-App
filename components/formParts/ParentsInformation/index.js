@@ -136,14 +136,14 @@ export default function ParentsInformation() {
       <div className="subSection">
         <h4>Gurdian Details</h4>
         <div className="formGrid">
-          <FormDiv title="Gurdian Name">
+          <FormDiv title="Guardian Name">
             <input
               required
               name="gName"
               value={gName}
               onChange={handleChange}
               type="text"
-              placeholder="Your Gurdian Name"
+              placeholder="Your Guardian Name"
             />
           </FormDiv>
           <FormDiv title="Mobile Mo">
@@ -153,7 +153,7 @@ export default function ParentsInformation() {
               value={gMobile}
               onChange={handleChange}
               type="text"
-              placeholder="Your Gurdian Number"
+              placeholder="Your Guardian Number"
             />
           </FormDiv>
 
