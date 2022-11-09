@@ -34,6 +34,11 @@ a {
   padding: 0;
   margin: 0;
 }
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+}
 
 main {
   min-height: 100vh;
@@ -84,6 +89,13 @@ button {
   align-items: center;
   gap: 5px;
   justify-content: center;
+}
+
+.offline {
+  margin-top: 40vh;
+  padding: 0 5vw;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /* Layout */
