@@ -12,7 +12,7 @@
 .p {
   font-size: 1.4rem;
   font-weight: 500;
-  margin-left: -30px;
+  margin-left: 25px;
 }
 
 .btnWrapper {
@@ -32,7 +32,7 @@
 
 .btnNew {
   font-size: 1.13rem;
-  background-color: var(--primary-blue);
+  background-color: var(--secondary-purple);
   border-radius: 5px;
   padding: 8px 18px;
   color: white;
@@ -41,10 +41,10 @@
 }
 
 .btnNew:hover {
-  background-color: #1a64c4;
+  background-color: var(--secondary-purple-hover);
 }
 
 .btnNew:active {
   transform: translateY(2px);
-  background-color: #0e4da0;
+  background-color: var(--secondary-purple-active);
 }

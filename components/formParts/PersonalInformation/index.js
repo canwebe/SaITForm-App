@@ -110,6 +110,7 @@ export default function PersonalInformation() {
             value={email}
             onChange={handleChange}
             type="email"
+            onError={() => alert('Error Hai bhai')}
             placeholder="Enter your email"
           />
         </FormDiv>

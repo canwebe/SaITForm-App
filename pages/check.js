@@ -80,6 +80,11 @@ export default function Check() {
     }
   }
 
+  const handleHomeBtn = () => {
+    dispatch({ type: 'RESET' })
+    router.push('/')
+  }
+
   useEffect(() => {
     if (!mobile) {
       router.push('/')
@@ -108,9 +113,9 @@ export default function Check() {
       <div className={s.bottomBtnDiv}>
         {isFinalize ? (
           <>
-            <Link href="/">
-              <a className={s.homeBtn}>Home</a>
-            </Link>
+            <button className={s.homeBtn} onClick={handleHomeBtn}>
+              Home
+            </button>
             <ReactToPrint
               documentTitle={`Form_S1_${data?.mobile}`}
               trigger={() => (

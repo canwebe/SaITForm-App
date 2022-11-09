@@ -15,15 +15,18 @@
   margin-top: 15px;
 }
 .nextBtn {
-  background-color: var(--primary-blue);
+  background-color: var(--secondary-purple);
   padding: 10px;
   font-size: 1.5rem;
   color: white;
   font-weight: 600;
   border-radius: 7px;
-  transition: all 0.3s ease-in-out;
+}
+
+.nextBtn:hover {
+  background-color: var(--secondary-purple-hover);
 }
 
 .nextBtn:active {
-  background-color: var(--secondary-blue);
+  background-color: var(--secondary-purple-active);
 }

@@ -1,0 +1,25 @@
+{
+  "background_color": "#7a59fb",
+  "description": "It is an online application form software for SaIT made by CWB.",
+  "display": "standalone",
+  "name": "SaIT Application Form",
+  "orientation": "any",
+  "short_name": "SaITForm",
+  "start_url": "/",
+  "theme_color": "#7a59fb",
+  "categories": ["education", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.ico"
+    },
+    {
+      "src": "/logo192.png"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "lang": "en",
+  "display_override": ["standalone", "minimal-ui", "fullscreen"]
+}
