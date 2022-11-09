@@ -16,8 +16,8 @@ class MyDocument extends Document {
           <meta name="author" content="Golam Rabbani" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <link rel="canonical" href="https://saitform.vercel.app" />
-          <link rel="apple-touch-icon" href="/logo192.png" />
-          {/* <link rel='manifest' href='/manifest.json' /> */}
+          <link rel="apple-touch-icon" href="/assets/logo192.png" />
+          <link rel="manifest" href="/manifest.json" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -29,6 +29,10 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <meta name="msapplication-tap-highlight" content="no" />
+          <meta name="theme-color" content=" #7a59fb" />
+          <meta name="format-detection" content="telephone=no" />
         </Head>
         <body>
           <Main />

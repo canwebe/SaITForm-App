@@ -10,14 +10,25 @@
   "categories": ["education", "utilities"],
   "icons": [
     {
-      "src": "/favicon.ico"
-    },
-    {
-      "src": "/logo192.png"
-    },
-    {
-      "src": "/favicon.ico",
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "assets/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/logo384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "assets/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "lang": "en",
