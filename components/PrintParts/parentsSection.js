@@ -36,7 +36,7 @@ export default function ParentsSection() {
         <FieldBox label="Email">{mEmail}</FieldBox>
       </div>
       <FieldBox label="Address">{mAddress}</FieldBox>
-      <FieldBox label="Gurdian Name">{gName}</FieldBox>
+      <FieldBox label="Guardian Name">{gName}</FieldBox>
       <div className={s.printGrid}>
         <FieldBox label="Mobile">{gMobile}</FieldBox>
         <FieldBox label="Email">{gEmail}</FieldBox>

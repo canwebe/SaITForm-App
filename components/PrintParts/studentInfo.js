@@ -41,7 +41,7 @@ export default function StudentInfo() {
       <div className={s.printFlex}>
         <FieldBox label="Name">{name}</FieldBox>
         <FieldBox label="DOB">{new Date(dob).toDateString()}</FieldBox>
-        <FieldBox label="Sex">
+        <FieldBox label="Gender">
           <CheckBox
             checked={sex}
             data={[
