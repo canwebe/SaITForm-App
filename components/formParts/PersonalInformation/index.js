@@ -1,4 +1,10 @@
 import { useFullData } from '../../../contexts/fullDataContext'
+import {
+  casteData,
+  nationalityData,
+  religionData,
+  statesData,
+} from '../../../data/data'
 import FormDiv from '../../FormDiv'
 import FormSection from '../../formSection'
 
@@ -60,8 +66,11 @@ export default function PersonalInformation() {
             <option disabled value="">
               Choose State
             </option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            {statesData.map((item) => (
+              <option key={item?.value} value={item?.value}>
+                {item?.name}
+              </option>
+            ))}
           </select>
         </FormDiv>
         <FormDiv title="Nationality">
@@ -74,8 +83,11 @@ export default function PersonalInformation() {
             <option disabled value="">
               Choose Nationality
             </option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            {nationalityData.map((item) => (
+              <option key={item?.value} value={item?.value}>
+                {item?.name}
+              </option>
+            ))}
           </select>
         </FormDiv>
       </div>
@@ -90,8 +102,11 @@ export default function PersonalInformation() {
             <option disabled value="">
               Choose Religion
             </option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            {religionData.map((item) => (
+              <option key={item?.value} value={item?.value}>
+                {item?.name}
+              </option>
+            ))}
           </select>
         </FormDiv>
         <FormDiv title="Caste">
@@ -99,8 +114,11 @@ export default function PersonalInformation() {
             <option disabled value="">
               Choose caste
             </option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            {casteData.map((item) => (
+              <option key={item?.value} value={item?.value}>
+                {item?.name}
+              </option>
+            ))}
           </select>
         </FormDiv>
         <FormDiv title="Your Email">
@@ -110,6 +128,7 @@ export default function PersonalInformation() {
             value={email}
             onChange={handleChange}
             type="email"
+            onError={() => alert('Error Hai bhai')}
             placeholder="Enter your email"
           />
         </FormDiv>
@@ -138,6 +157,7 @@ export default function PersonalInformation() {
         <FormDiv title="Year of Passing">
           <input
             required
+            maxLength={4}
             name="yearOfPass"
             value={yearOfPass}
             onChange={handleChange}

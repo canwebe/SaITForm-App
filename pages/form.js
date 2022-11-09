@@ -7,16 +7,21 @@ import { useFullData } from '../contexts/fullDataContext'
 import PhotoUploadParts from '../components/formParts/PhotoUploadParts'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import toast from 'react-hot-toast'
 
 export default function Form() {
   const [isClick, setIsClick] = useState(false)
 
-  const { name, mobile } = useFullData()
+  const { name, mobile, imgSrc } = useFullData()
 
   const router = useRouter()
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!imgSrc) {
+      toast.error(<b>Please provide your image</b>)
+      return
+    }
     router.push('/check')
   }
 

@@ -8,11 +8,11 @@ export default function DeclarationStudent() {
     <div className={s.declarationDiv}>
       <h2>Declaration by Student</h2>
       <p className={s.info}>
-        I, <b>{name}</b> The candidate seeking admission to the Sambhram
-        Institute Of Technology, Bangalore{' '}
+        I, <span className={s.upperName}>{name}</span> The candidate seeking
+        admission to the Sambhram Institute Of Technology, Bangalore{' '}
         <span className={s.course}>{`${degree} ${course} ${
           branch || ''
-        }`}</span>
+        }`}</span>{' '}
         Course, solemnly declare that I will strictly abide by the rules and
         regulations in force and those that may be framed hereafter, and will
         not indulge in any unsocial, anti-national activities. I will avoid any
@@ -25,7 +25,7 @@ export default function DeclarationStudent() {
       <div className={s.bottomDiv}>
         <p>Date:</p>
         <p>Signature of Student</p>
-        <p>Signature of Parent/Gurdian</p>
+        <p>Signature of Parent/Guardian</p>
       </div>
     </div>
   )

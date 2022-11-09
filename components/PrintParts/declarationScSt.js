@@ -9,16 +9,16 @@ export default function DeclarationScSt() {
       <h2>Declaration only by SC/ST Student</h2>
       <p></p>
       <p className={s.info}>
-        I, <b>{name}</b> solemnly declare that I will apply for the SC/ST
-        scholarship for all the four years in the concerned Social Welfare
-        Department as per my eligibility and norms. I am solemnly responsible to
-        pay all the four years CET and College fees if I do not apply for the
-        SC/ST scholarship.
+        I, <span className={s.upperName}>{name}</span> solemnly declare that I
+        will apply for the SC/ST scholarship for all the four years in the
+        concerned Social Welfare Department as per my eligibility and norms. I
+        am solemnly responsible to pay all the four years CET and College fees
+        if I do not apply for the SC/ST scholarship.
       </p>
       <div className={s.bottomDiv}>
         <p>Date:</p>
         <p>Signature of Student</p>
-        <p>Signature of Parent/Gurdian</p>
+        <p>Signature of Parent/Guardian</p>
       </div>
     </div>
   )

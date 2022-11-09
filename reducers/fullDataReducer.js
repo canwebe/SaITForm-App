@@ -21,6 +21,8 @@ export default function FullDataReducer(state, action) {
       }
     case 'CHANGE_IMG':
       return { ...state, file: action.file, imgSrc: action.url }
+    case 'ADD_DATA':
+      return { ...action.payload, file: '' }
     case 'RESET':
       return INITIAL_STATE
     default:

@@ -12,15 +12,21 @@ import {
 } from 'firebase/firestore'
 import { db } from '../lib/firebase'
 
-export const checkStudent = async (name, mobile) => {
+export const checkStudent = async (name, mobile,check) => {
   const q = query(
     collection(db, 'students'),
-    where('name', '==', name),
-    where('mobile', '==', mobile),
+    where('name', '==', name.trim().toLowerCase()),
+    where('mobile', '==', mobile.trim()),
     limit(1)
   )
   const snapshot = await getDocs(q)
-  return snapshot.empty
+  if(check){
+    return snapshot.empty
+  }else{
+    if(!snapshot.empty){
+  return snapshot.docs[0].data()
+    }
+  }
 }
 
 export const addFullData = async (data, id) => {

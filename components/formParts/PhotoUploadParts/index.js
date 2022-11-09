@@ -4,9 +4,10 @@ import avatar from '../../../public/assets/user.webp'
 import Image from 'next/image'
 import { useFullData } from '../../../contexts/fullDataContext'
 import toast from 'react-hot-toast'
+import { MdArrowForward } from 'react-icons/md'
 
 export default function PhotoUploadParts({ setIsClick }) {
-  const { dispatch, file, imgSrc } = useFullData()
+  const { dispatch, imgSrc } = useFullData()
 
   const acceptedTypes = ['image/png', 'image/jpeg']
 
@@ -41,7 +42,6 @@ export default function PhotoUploadParts({ setIsClick }) {
           <input
             accept="image/png,image/jpeg"
             onChange={handleChange}
-            required
             type="file"
             name="file"
           />
@@ -53,6 +53,7 @@ export default function PhotoUploadParts({ setIsClick }) {
         type="submit"
       >
         Next
+        <MdArrowForward />
       </button>
     </FormSection>
   )

@@ -1,0 +1,63 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(169, 169, 169, 0.614);
+  backdrop-filter: blur(7px);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  padding: 60px 34px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  border-radius: 7px;
+  width: 400px;
+  position: relative;
+}
+
+.modal button,
+.modal input {
+  font-size: 1.1rem;
+  border-radius: 7px;
+}
+
+.modal input {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+}
+
+.modal button {
+  background-color: var(--secondary-purple);
+  width: 130px;
+  color: white;
+  padding: 10px 5px;
+}
+
+.modal button svg {
+  margin-left: -5px;
+  font-size: 1.4rem;
+}
+
+.modal button:hover {
+  background-color: var(--secondary-purple-hover);
+}
+
+.modal button:active {
+  background-color: var(--secondary-purple-active);
+}
+
+.icon {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  font-size: 2.2rem;
+  color: var(--secondary-purple);
+  cursor: pointer;
+}

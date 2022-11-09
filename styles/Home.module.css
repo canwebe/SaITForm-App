@@ -1,18 +1,27 @@
 .firstDivWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  min-height: 80vh;
+  min-height: calc(100vh - 68.5px - 50.7px);
+  max-width: 1200px;
+  margin-inline: auto;
+  gap: 20px;
+}
+
+.imgDiv {
+  min-width: 400px;
+  width: 40%;
 }
 
 .firstForm {
   background-color: white;
   border-radius: 0.5rem;
-  padding: 50px;
+  padding: 65px 50px 40px;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
-  width: 35%;
+  width: 40%;
+  max-width: 500px;
   min-width: 400px;
-  padding: 60px;
+  border-bottom: 7px solid var(--secondary-purple);
 }
 
 .formDiv {
@@ -65,10 +74,19 @@
 }
 
 .btnNext {
-  background-color: rgb(122, 89, 251);
+  background-color: var(--secondary-purple);
   color: white;
   padding: 10px 14px;
   width: 150px;
   font-size: 1.25rem;
   margin-top: -7px;
+  border-radius: 7px;
+}
+
+.btnNext:hover {
+  background-color: var(--secondary-purple-hover);
+}
+
+.btnNext:active {
+  background-color: var(--secondary-purple-active);
 }

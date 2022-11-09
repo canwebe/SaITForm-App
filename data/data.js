@@ -197,3 +197,63 @@ export const branchMap = {
     },
   ],
 }
+
+export const nationalityData = [
+  {
+    name: 'Indian',
+    value: 'indian',
+  },
+  {
+    name: 'Nepali',
+    value: 'nepali',
+  },
+]
+
+export const statesData = [
+  {
+    name: 'Assam',
+    value: 'assam',
+  },
+  {
+    name: 'Karnataka',
+    value: 'karnataka',
+  },
+]
+
+export const religionData = [
+  {
+    name: 'Hinduism',
+    value: 'hinduism',
+  },
+  {
+    name: 'Islam',
+    value: 'islam',
+  },
+  {
+    name: 'Christianity',
+    value: 'christianity',
+  },
+  {
+    name: 'Sikhism',
+    value: 'sikhism',
+  },
+]
+
+export const casteData = [
+  {
+    name: 'General',
+    value: 'general',
+  },
+  {
+    name: 'SC',
+    value: 'sc',
+  },
+  {
+    name: 'ST',
+    value: 'st',
+  },
+  {
+    name: 'OBC',
+    value: 'obc',
+  },
+]
