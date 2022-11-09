@@ -4,6 +4,9 @@ import toast from 'react-hot-toast'
 import { checkStudent } from '../helper/firebase'
 import { useFullData } from '../contexts/fullDataContext'
 import styles from '../styles/Home.module.css'
+import homeImage from '../public/assets/home.svg'
+import Image from 'next/image'
+import { MdArrowForward } from 'react-icons/md'
 
 export default function FirstForm() {
   const [isLoading, setIsLoading] = useState(false)
@@ -25,7 +28,11 @@ export default function FirstForm() {
     const id = toast.loading('Fetching Data..')
     setIsLoading(true)
     try {
-      const isEmpty = await checkStudent(name.trim().toLowerCase(), mobile)
+      const isEmpty = await checkStudent(
+        name.trim().toLowerCase(),
+        mobile,
+        true
+      )
 
       if (isEmpty) {
         router.push('/form')
@@ -47,6 +54,9 @@ export default function FirstForm() {
 
   return (
     <div className={styles.firstDivWrapper}>
+      <div className={styles.imgDiv}>
+        <Image src={homeImage} alt={'Home svg'} />
+      </div>
       <form className={styles.firstForm} onSubmit={handleSubmit}>
         <div className={styles.formDiv}>
           <input
@@ -75,7 +85,14 @@ export default function FirstForm() {
         </div>
 
         <button disabled={isLoading} className={styles.btnNext} type="submit">
-          {isLoading ? 'Loading' : 'Next'}
+          {isLoading ? (
+            'Loading'
+          ) : (
+            <>
+              Next
+              <MdArrowForward />
+            </>
+          )}
         </button>
       </form>
     </div>

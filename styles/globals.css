@@ -3,11 +3,16 @@
   --input-color: #80868b;
   --border-color: #8f9399;
   --form-border: ##cedcf1;
-  --body-background: #e8dff7;
+  --body-background: #ececec;
   --gray-1: #808999;
-  --secondary-purple: #845ec2;
+  --secondary-purple: #7a59fb;
+  --secondary-purple-hover: #694ed5;
+  --secondary-purple-active: #5439c0;
   --secondary-blue: #2f4fc1;
   --light-background: #d9f2fd;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +51,7 @@ footer {
   color: #80868b;
   width: 60%;
   min-width: 300px;
+  height: 50.7px;
 }
 footer a {
   font-weight: 500;
@@ -53,14 +59,18 @@ footer a {
 }
 
 nav {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   z-index: 99;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.23);
+  /* box-shadow: 0 3px 20px rgb(0 0 0 / 13%); */
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid grey;
+  height: 68.5px;
 }
 
 .wrapper {
   width: 90%;
-  max-width: 1700px;
+  max-width: 1600px;
   margin-inline: auto;
 }
 
@@ -69,6 +79,11 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
 }
 
 /* Layout */
@@ -104,6 +119,16 @@ label:focus-within {
   color: red;
 }
 
+/* Mobile version */
+.mobile {
+  min-height: 100vh;
+  place-items: center;
+  padding: 0 5vw;
+  font-size: 1.4rem;
+  display: none;
+  text-align: center;
+}
+
 /* For Print */
 @media print {
   html,
@@ -111,5 +136,14 @@ label:focus-within {
     height: initial !important;
     overflow: initial !important;
     -webkit-print-color-adjust: exact;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    display: none;
+  }
+  .mobile {
+    display: grid;
   }
 }

@@ -110,6 +110,7 @@ export default function PersonalInformation() {
             value={email}
             onChange={handleChange}
             type="email"
+            onError={() => alert('Error Hai bhai')}
             placeholder="Enter your email"
           />
         </FormDiv>
@@ -138,6 +139,7 @@ export default function PersonalInformation() {
         <FormDiv title="Year of Passing">
           <input
             required
+            maxLength={4}
             name="yearOfPass"
             value={yearOfPass}
             onChange={handleChange}

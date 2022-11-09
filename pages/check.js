@@ -16,16 +16,18 @@ import { addFullData } from '../helper/firebase'
 import { storage } from '../lib/firebase'
 import s from '../styles/Check.module.css'
 import uuid4 from 'uuid4'
+import { MdBorderColor, MdCheckCircleOutline } from 'react-icons/md'
 
 export default function Check() {
-  const [isFinalize, setIsFinalize] = useState(false)
+  const router = useRouter()
+  const print = router.query.print
+
+  const [isFinalize, setIsFinalize] = useState(print || false)
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
 
   const printRef = useRef()
   const { mobile, caste } = useFullData()
-
-  const router = useRouter()
 
   // Getting Data
   const { file, dispatch, ...data } = useFullData()
@@ -52,7 +54,15 @@ export default function Check() {
       async () => {
         // Handle successful uploads on complete
         const url = await getDownloadURL(uploadTask.snapshot.ref)
-        const res = await addFullData({ ...data, imgSrc: url }, docId)
+        const res = await addFullData(
+          {
+            ...data,
+            name: data.name.trim().toLowerCase(), //Triming white space and lowercase for searching
+            mobile: mobile.trim(), //Triming white space for searching
+            imgSrc: url, // Photo url
+          },
+          docId
+        )
         if (res) {
           toast.success(<b>Upload done</b>, { id })
           setIsFinalize(true)
@@ -78,6 +88,11 @@ export default function Check() {
       setIsLoading(false)
       setProgress(0)
     }
+  }
+
+  const handleHomeBtn = () => {
+    router.push('/')
+    dispatch({ type: 'RESET' })
   }
 
   useEffect(() => {
@@ -108,9 +123,9 @@ export default function Check() {
       <div className={s.bottomBtnDiv}>
         {isFinalize ? (
           <>
-            <Link href="/">
-              <a className={s.homeBtn}>Home</a>
-            </Link>
+            <button className={s.homeBtn} onClick={handleHomeBtn}>
+              Home
+            </button>
             <ReactToPrint
               documentTitle={`Form_S1_${data?.mobile}`}
               trigger={() => (
@@ -135,10 +150,18 @@ export default function Check() {
               disabled={isLoading}
               onClick={() => router.back()}
             >
+              <MdBorderColor />
               Back and Edit
             </button>
             <button disabled={isLoading} onClick={handleClick}>
-              {isLoading ? 'Uploading' : 'Finalize and Submit'}
+              {isLoading ? (
+                'Uploading'
+              ) : (
+                <>
+                  Finalize and Submit
+                  <MdCheckCircleOutline />
+                </>
+              )}
             </button>
           </>
         )}
