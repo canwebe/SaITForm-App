@@ -139,6 +139,7 @@ export default function PersonalInformation() {
         <FormDiv title="Year of Passing">
           <input
             required
+            maxLength={4}
             name="yearOfPass"
             value={yearOfPass}
             onChange={handleChange}

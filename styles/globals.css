@@ -80,6 +80,10 @@ button {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
 }
 
 /* Layout */

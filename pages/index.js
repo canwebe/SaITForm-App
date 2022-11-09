@@ -27,7 +27,11 @@ export default function FirstForm() {
     const id = toast.loading('Fetching Data..')
     setIsLoading(true)
     try {
-      const isEmpty = await checkStudent(name.trim().toLowerCase(), mobile)
+      const isEmpty = await checkStudent(
+        name.trim().toLowerCase(),
+        mobile,
+        true
+      )
 
       if (isEmpty) {
         router.push('/form')

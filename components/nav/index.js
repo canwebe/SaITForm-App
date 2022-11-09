@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { useFullData } from '../../contexts/fullDataContext'
 import styles from './nav.module.css'
 import logo from '../../public/assets/logo.webp'
 import { useState } from 'react'
-import Modal from '../modal'
+const Modal = dynamic(() => import('../modal'))
 
 export default function Nav() {
   const { dispatch } = useFullData()
@@ -16,6 +17,16 @@ export default function Nav() {
   const handleNew = () => {
     dispatch({ type: 'RESET' })
     router.push('/')
+  }
+  const handleSuccess = (data) => {
+    dispatch({ type: 'ADD_DATA', payload: data })
+
+    router.push({
+      pathname: '/check',
+      query: { print: true },
+    })
+
+    setIsModal(false)
   }
 
   const handleClick = () => {
@@ -43,7 +54,9 @@ export default function Nav() {
           </div>
         </div>
       </div>
-      <Modal setIsModal={setIsModal} />
+      {isModal ? (
+        <Modal setIsModal={setIsModal} handleSuccess={handleSuccess} />
+      ) : null}
     </nav>
   )
 }

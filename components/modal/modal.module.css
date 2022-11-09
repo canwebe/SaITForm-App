@@ -39,3 +39,25 @@
   color: white;
   padding: 10px 5px;
 }
+
+.modal button svg {
+  margin-left: -5px;
+  font-size: 1.4rem;
+}
+
+.modal button:hover {
+  background-color: var(--secondary-purple-hover);
+}
+
+.modal button:active {
+  background-color: var(--secondary-purple-active);
+}
+
+.icon {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  font-size: 2.2rem;
+  color: var(--secondary-purple);
+  cursor: pointer;
+}

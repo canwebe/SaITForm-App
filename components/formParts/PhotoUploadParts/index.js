@@ -6,7 +6,7 @@ import { useFullData } from '../../../contexts/fullDataContext'
 import toast from 'react-hot-toast'
 
 export default function PhotoUploadParts({ setIsClick }) {
-  const { dispatch, file, imgSrc } = useFullData()
+  const { dispatch, imgSrc } = useFullData()
 
   const acceptedTypes = ['image/png', 'image/jpeg']
 
@@ -41,7 +41,6 @@ export default function PhotoUploadParts({ setIsClick }) {
           <input
             accept="image/png,image/jpeg"
             onChange={handleChange}
-            required
             type="file"
             name="file"
           />

@@ -177,13 +177,17 @@
   margin-bottom: 70px;
 }
 
-.declarationDiv .course {
+.declarationDiv .course,
+.declarationDiv .upperName {
   font-weight: 600;
 }
 
 .upperCase,
 .declarationDiv .course {
   text-transform: uppercase;
+}
+.declarationDiv .upperName {
+  text-transform: capitalize;
 }
 
 .declarationDiv .info {
@@ -193,11 +197,17 @@
 }
 
 .declarationDiv .bottomDiv {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   font-weight: 600;
   margin-top: 70px;
+}
+.declarationDiv .bottomDiv p:nth-child(2) {
+  text-align: center;
+}
+.declarationDiv .bottomDiv p:nth-child(3) {
+  text-align: right;
 }
 
 /* For Page Breaks */

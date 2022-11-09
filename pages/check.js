@@ -18,14 +18,15 @@ import s from '../styles/Check.module.css'
 import uuid4 from 'uuid4'
 
 export default function Check() {
-  const [isFinalize, setIsFinalize] = useState(false)
+  const router = useRouter()
+  const print = router.query.print
+
+  const [isFinalize, setIsFinalize] = useState(print || false)
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
 
   const printRef = useRef()
   const { mobile, caste } = useFullData()
-
-  const router = useRouter()
 
   // Getting Data
   const { file, dispatch, ...data } = useFullData()
@@ -52,7 +53,15 @@ export default function Check() {
       async () => {
         // Handle successful uploads on complete
         const url = await getDownloadURL(uploadTask.snapshot.ref)
-        const res = await addFullData({ ...data, imgSrc: url }, docId)
+        const res = await addFullData(
+          {
+            ...data,
+            name: data.name.trim().toLowerCase(), //Triming white space and lowercase for searching
+            mobile: mobile.trim(), //Triming white space for searching
+            imgSrc: url, // Photo url
+          },
+          docId
+        )
         if (res) {
           toast.success(<b>Upload done</b>, { id })
           setIsFinalize(true)
@@ -81,8 +90,8 @@ export default function Check() {
   }
 
   const handleHomeBtn = () => {
-    dispatch({ type: 'RESET' })
     router.push('/')
+    dispatch({ type: 'RESET' })
   }
 
   useEffect(() => {
