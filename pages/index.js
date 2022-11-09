@@ -6,6 +6,7 @@ import { useFullData } from '../contexts/fullDataContext'
 import styles from '../styles/Home.module.css'
 import homeImage from '../public/assets/home.svg'
 import Image from 'next/image'
+import { MdArrowForward } from 'react-icons/md'
 
 export default function FirstForm() {
   const [isLoading, setIsLoading] = useState(false)
@@ -84,7 +85,14 @@ export default function FirstForm() {
         </div>
 
         <button disabled={isLoading} className={styles.btnNext} type="submit">
-          {isLoading ? 'Loading' : 'Next'}
+          {isLoading ? (
+            'Loading'
+          ) : (
+            <>
+              Next
+              <MdArrowForward />
+            </>
+          )}
         </button>
       </form>
     </div>

@@ -16,6 +16,7 @@ import { addFullData } from '../helper/firebase'
 import { storage } from '../lib/firebase'
 import s from '../styles/Check.module.css'
 import uuid4 from 'uuid4'
+import { MdBorderColor, MdCheckCircleOutline } from 'react-icons/md'
 
 export default function Check() {
   const router = useRouter()
@@ -149,10 +150,18 @@ export default function Check() {
               disabled={isLoading}
               onClick={() => router.back()}
             >
+              <MdBorderColor />
               Back and Edit
             </button>
             <button disabled={isLoading} onClick={handleClick}>
-              {isLoading ? 'Uploading' : 'Finalize and Submit'}
+              {isLoading ? (
+                'Uploading'
+              ) : (
+                <>
+                  Finalize and Submit
+                  <MdCheckCircleOutline />
+                </>
+              )}
             </button>
           </>
         )}

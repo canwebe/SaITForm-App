@@ -50,7 +50,9 @@ export default function Nav() {
             <button onClick={handleClick} className={styles.link}>
               Get Form
             </button>
-            <button className={styles.link}>Admin</button>
+            <Link href="/admin">
+              <a className={styles.link}>Admin</a>
+            </Link>
           </div>
         </div>
       </div>

@@ -24,10 +24,11 @@
 .link {
   font-size: 1.1rem;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .link:hover {
-  color: blue;
+  color: var(--secondary-purple-active);
 }
 
 .btnNew {

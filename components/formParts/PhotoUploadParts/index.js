@@ -4,6 +4,7 @@ import avatar from '../../../public/assets/user.webp'
 import Image from 'next/image'
 import { useFullData } from '../../../contexts/fullDataContext'
 import toast from 'react-hot-toast'
+import { MdArrowForward } from 'react-icons/md'
 
 export default function PhotoUploadParts({ setIsClick }) {
   const { dispatch, imgSrc } = useFullData()
@@ -52,6 +53,7 @@ export default function PhotoUploadParts({ setIsClick }) {
         type="submit"
       >
         Next
+        <MdArrowForward />
       </button>
     </FormSection>
   )
