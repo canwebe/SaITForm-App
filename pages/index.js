@@ -4,9 +4,10 @@ import toast from 'react-hot-toast'
 import { checkStudent } from '../helper/firebase'
 import { useFullData } from '../contexts/fullDataContext'
 import styles from '../styles/Home.module.css'
-import homeImage from '../public/assets/home.svg'
+// import homeImage from '../public/assets/home.svg'
 import Image from 'next/image'
 import { MdArrowForward } from 'react-icons/md'
+import Homesvg from '../components/homeImg'
 
 export default function FirstForm() {
   const [isLoading, setIsLoading] = useState(false)
@@ -55,7 +56,7 @@ export default function FirstForm() {
   return (
     <div className={styles.firstDivWrapper}>
       <div className={styles.imgDiv}>
-        <Image src={homeImage} alt={'Home svg'} />
+        <Homesvg />
       </div>
       <form className={styles.firstForm} onSubmit={handleSubmit}>
         <div className={styles.formDiv}>

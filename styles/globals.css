@@ -122,8 +122,21 @@ button {
   gap: 20px;
 }
 
-label:focus-within {
-  color: red;
+input,
+select,
+textarea {
+  background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 /* Mobile version */
