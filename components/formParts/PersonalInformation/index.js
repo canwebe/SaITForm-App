@@ -157,11 +157,12 @@ export default function PersonalInformation() {
         <FormDiv title="Year of Passing">
           <input
             required
-            maxLength={4}
+            max={3000}
+            min={2000}
             name="yearOfPass"
             value={yearOfPass}
             onChange={handleChange}
-            type="text"
+            type="number"
             placeholder="Year of Passing"
           />
         </FormDiv>

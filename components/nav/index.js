@@ -39,7 +39,7 @@ export default function Nav() {
         <div className={styles.nav}>
           <Link href="/">
             <a className={styles.img}>
-              <Image src={logo} alt="Sambhram Logo" priority />
+              <Image src={logo} alt="Sambhram Logo" priority={true} />
             </a>
           </Link>
           <p className={styles.p}>Application Form</p>

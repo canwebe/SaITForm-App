@@ -129,12 +129,10 @@ export default function EducationInformation() {
                 <input
                   min={2000}
                   max={2099}
-                  maxLength={4}
-                  minLength={4}
                   required={item?.required}
                   value={item.value.yearOfPassing}
                   onChange={(e) => handleChange(e, item.varName)}
-                  type="text"
+                  type="number"
                   name="yearOfPassing"
                   placeholder="Passing Year"
                 />

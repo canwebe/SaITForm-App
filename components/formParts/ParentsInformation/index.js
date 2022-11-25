@@ -46,7 +46,8 @@ export default function ParentsInformation() {
               name="fMobile"
               value={fMobile}
               onChange={handleChange}
-              type="text"
+              type="number"
+              min={1000000000}
               placeholder="Your Father Number"
             />
           </FormDiv>
@@ -99,7 +100,8 @@ export default function ParentsInformation() {
               name="mMobile"
               value={mMobile}
               onChange={handleChange}
-              type="text"
+              type="number"
+              min={1000000000}
               placeholder="Your Mother Number"
             />
           </FormDiv>
@@ -152,7 +154,8 @@ export default function ParentsInformation() {
               name="gMobile"
               value={gMobile}
               onChange={handleChange}
-              type="text"
+              type="number"
+              min={1000000000}
               placeholder="Your Guardian Number"
             />
           </FormDiv>
