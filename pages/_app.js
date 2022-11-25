@@ -6,10 +6,12 @@ import FUllDataContextProvider from '../contexts/fullDataContext'
 import '../styles/globals.css'
 import '../styles/nprogress.css'
 import nProgress from 'nprogress'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
   // Configuration of NProgress
   nProgress.configure({ showSpinner: false })
 
@@ -43,7 +45,8 @@ function MyApp({ Component, pageProps }) {
           <div className="wrapper">
             <Component {...pageProps} />
           </div>
-          <Footer />
+
+          {router.pathname !== '/admin' ? <Footer /> : null}
         </FUllDataContextProvider>
       </main>
       <div className="mobile">

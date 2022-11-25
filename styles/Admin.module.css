@@ -1,0 +1,33 @@
+.adminLayout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px calc(100vh - 68.5px - 80px);
+  row-gap: 7px;
+  /* height: calc(100vh - 68.5px - 50.7px); */
+}
+
+/* Topbar */
+.topBar {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.userName {
+  font-weight: 600;
+}
+
+/* Sidebar */
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  padding-right: 13px;
+  border-right: 1px solid grey;
+  gap: 10px;
+}

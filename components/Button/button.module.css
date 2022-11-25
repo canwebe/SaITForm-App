@@ -1,0 +1,44 @@
+.btn {
+  padding: 8px 18px;
+  font-size: 1.13rem;
+  border-radius: 5px;
+  height: 39px;
+  transition: all 0.3s ease-in-out;
+}
+.btn:disabled {
+  opacity: 0.6;
+}
+
+.btn:global(.wide) {
+  width: 210px;
+}
+
+.btn:global(.primary) {
+  background-color: var(--secondary-blue);
+  color: white;
+}
+
+.btn:global(.red) {
+  background-color: #cf0000;
+  color: white;
+}
+
+.btn:global(.primary):hover:not(:disabled) {
+  background-color: #2644b0;
+}
+.btn:global(.red):hover:not(:disabled) {
+  background-color: #ae0707;
+}
+
+.btn:global(.primary):active:not(:disabled) {
+  background-color: #1b3799;
+}
+
+.btn:global(.red):active:not(:disabled) {
+  background-color: #900101;
+}
+
+.btn:global(.red):active:not(:disabled),
+.btn:global(.primary):active:not(:disabled) {
+  transform: translateY(3px);
+}

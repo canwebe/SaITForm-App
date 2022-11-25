@@ -33,6 +33,7 @@ export default function Nav() {
     setIsModal(true)
   }
 
+  console.log(router.pathname)
   return (
     <nav>
       <div className="wrapper">
@@ -51,7 +52,13 @@ export default function Nav() {
               Get Form
             </button>
             <Link href="/admin">
-              <a className={styles.link}>Admin</a>
+              <a
+                className={`${styles.link} ${
+                  router.pathname === '/admin' ? 'active' : ''
+                }`}
+              >
+                Admin
+              </a>
             </Link>
           </div>
         </div>
