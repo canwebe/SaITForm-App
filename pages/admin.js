@@ -1,17 +1,25 @@
 import toast from 'react-hot-toast'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import AdminContent from '../components/adminComp/adminContent'
 import SidebarAdmin from '../components/adminComp/sideBarAdmin'
 import TopBar from '../components/adminComp/topBar'
 import { useStudentList } from '../contexts/studentsContext'
 import { getStudents } from '../helper/firebase'
 import s from '../styles/Admin.module.css'
+import { TABLE_COLUMNS } from '../helper/table'
+import {
+  useFilters,
+  useGlobalFilter,
+  usePagination,
+  useSortBy,
+  useTable,
+} from 'react-table'
 
 export default function Admin() {
   // States
   const [isLoading, setIsLoading] = useState(false)
 
-  const { state, dispatch } = useStudentList()
+  const { state: studentsList, dispatch } = useStudentList()
 
   // Functions
   const handleData = async () => {
@@ -34,11 +42,82 @@ export default function Admin() {
     }
   }
 
+  // Table Initialization
+  const columns = useMemo(() => TABLE_COLUMNS, [])
+
+  const data = useMemo(() => studentsList || [], [studentsList])
+
+  const tableInstances = useTable(
+    {
+      columns,
+      data,
+      initialState: {
+        pageSize: 20,
+        hiddenColumns: [
+          'caste',
+          'qualification',
+          'board',
+          'yearOfPass',
+          'allottedCategory',
+          'dateOfAllotment',
+          'isHostel',
+          'isTransport',
+          'fOccupation',
+          'mOccupation',
+        ],
+      },
+    },
+    useFilters,
+    useGlobalFilter,
+    useSortBy,
+    usePagination,
+    (hooks) => {
+      hooks.visibleColumns.push((columns) => [
+        {
+          Header: 'View',
+          Cell: (props) => (
+            <button className="viewBtn">View {console.log(props)}</button>
+          ),
+        },
+        ...columns,
+      ])
+    }
+  )
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    page,
+    prepareRow,
+    setGlobalFilter,
+    setFilter,
+    state,
+    nextPage,
+    previousPage,
+    canNextPage,
+    canPreviousPage,
+    pageOptions,
+    gotoPage,
+    setAllFilters,
+    allColumns,
+  } = tableInstances
+
+  const { globalFilter, pageIndex, filters } = state
+
+  console.log(data, allColumns, state)
   return (
     <div className={s.adminLayout}>
-      <TopBar handleData={handleData} isLoading={isLoading} />
-      <SidebarAdmin />
-      <AdminContent data={state} />
+      <TopBar
+        handleData={handleData}
+        isLoading={isLoading}
+        size={studentsList?.length}
+      />
+      <SidebarAdmin
+        setFilter={setFilter}
+        setGlobalFilter={setGlobalFilter}
+        filter={globalFilter}
+      />
+      {studentsList ? <AdminContent {...tableInstances} /> : null}
     </div>
   )
 }

@@ -167,3 +167,104 @@ input[type='number'] {
     display: grid;
   }
 }
+
+/* For Table */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 9px 10px;
+  white-space: nowrap;
+}
+
+tr:nth-child(even) {
+  background-color: #ece6e6;
+}
+
+tr:hover {
+  background-color: rgb(208, 205, 248);
+}
+/* .teacherLists td:nth-child(2) {
+  text-transform: uppercase;
+}
+.studentLists td:nth-child(2),
+.studentLists td:nth-child(4),
+.studentLists td:nth-child(6) {
+  text-transform: uppercase;
+}
+
+
+.studentLists td {
+  text-align: center;
+} */
+
+td:nth-child(1),
+td:nth-child(8),
+td:nth-child(9),
+td:nth-child(10),
+td:nth-child(11) {
+  text-align: center;
+}
+
+td:nth-child(8),
+td:nth-child(9),
+td:nth-child(10),
+td:nth-child(11) {
+  text-transform: uppercase;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #6824b0;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconSort {
+  font-size: 1.5rem;
+}
+
+td {
+  text-transform: capitalize;
+}
+
+/* .teacherLists th:not(:nth-child(4), :nth-child(7)) {
+  min-width: 115px;
+  position: relative;
+}
+
+.studentLists th:not(:nth-child(1), :nth-child(8)) {
+  min-width: 115px;
+  position: relative;
+}
+
+table .iconSort {
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  font-size: 1.6rem;
+}
+
+.teacherLists .editBtn,
+.studentLists .editBtn {
+  color: red;
+  font-weight: 600;
+  width: 100%;
+} */
+
+.viewBtn {
+  color: #5c60d4;
+  font-weight: 600;
+  width: 100%;
+}

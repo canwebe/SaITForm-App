@@ -4,7 +4,7 @@ import {
   nationalityData,
   religionData,
   statesData,
-} from '../../../data/data'
+} from '../../../helper/data'
 import FormDiv from '../../FormDiv'
 import FormSection from '../../formSection'
 

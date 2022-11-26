@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from 'react'
-import { INITIAL_STATE } from '../data/data'
+import { INITIAL_STATE } from '../helper/data'
 import FullDataReducer from '../reducers/fullDataReducer'
 
 const FUllDataContext = createContext()
