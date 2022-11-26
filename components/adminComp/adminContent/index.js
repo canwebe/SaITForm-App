@@ -1,6 +1,7 @@
 import s from './adminContent.module.css'
 
-export default function AdminContent() {
+export default function AdminContent({ data }) {
+  console.log(data)
   return (
     <div className={s.adminContent}>
       This is admin Content

@@ -8,6 +8,7 @@ import '../styles/nprogress.css'
 import nProgress from 'nprogress'
 import Router, { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import StudentsContextProvider from '../contexts/studentsContext'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -43,9 +44,10 @@ function MyApp({ Component, pageProps }) {
         <FUllDataContextProvider>
           <Nav />
           <div className="wrapper">
-            <Component {...pageProps} />
+            <StudentsContextProvider>
+              <Component {...pageProps} />
+            </StudentsContextProvider>
           </div>
-
           {router.pathname !== '/admin' ? <Footer /> : null}
         </FUllDataContextProvider>
       </main>
