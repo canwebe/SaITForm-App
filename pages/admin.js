@@ -100,11 +100,12 @@ export default function Admin() {
     gotoPage,
     setAllFilters,
     allColumns,
+    preGlobalFilteredRows,
   } = tableInstances
 
   const { globalFilter, pageIndex, filters } = state
 
-  console.log(data, allColumns, state)
+  console.log(tableInstances, state)
   return (
     <div className={s.adminLayout}>
       <TopBar
@@ -113,11 +114,30 @@ export default function Admin() {
         size={studentsList?.length}
       />
       <SidebarAdmin
+        setAllFilters={setAllFilters}
         setFilter={setFilter}
         setGlobalFilter={setGlobalFilter}
         filter={globalFilter}
+        filters={filters}
+        preGlobalFilteredRows={preGlobalFilteredRows}
+        allColumns={allColumns}
       />
-      {studentsList ? <AdminContent {...tableInstances} /> : null}
+      {studentsList ? (
+        <AdminContent
+          getTableProps={getTableProps}
+          getTableBodyProps={getTableBodyProps}
+          headerGroups={headerGroups}
+          page={page}
+          prepareRow={prepareRow}
+          nextPage={nextPage}
+          previousPage={previousPage}
+          canNextPage={canNextPage}
+          canPreviousPage={canPreviousPage}
+          pageOptions={pageOptions}
+          gotoPage={gotoPage}
+          allColumns={allColumns}
+        />
+      ) : null}
     </div>
   )
 }

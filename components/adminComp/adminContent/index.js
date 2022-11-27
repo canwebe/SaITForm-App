@@ -16,18 +16,12 @@ export default function AdminContent({
   headerGroups,
   page,
   prepareRow,
-  setGlobalFilter,
-  setFilter,
-  state,
   nextPage,
   previousPage,
   canNextPage,
   canPreviousPage,
   pageOptions,
   gotoPage,
-  setAllFilters,
-  selectedFlatRows,
-  toggleAllRowsSelected,
   allColumns,
 }) {
   const defaultColumns = [
