@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import toast from 'react-hot-toast'
 import { useAuth } from '../../../contexts/authContext'
 import s from '../../../styles/Admin.module.css'

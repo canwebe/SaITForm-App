@@ -2,14 +2,11 @@
   --primary-blue: #1a73e8;
   --input-color: #80868b;
   --border-color: #8f9399;
-  --form-border: ##cedcf1;
   --body-background: #ececec;
-  --gray-1: #808999;
   --secondary-purple: #7a59fb;
   --secondary-purple-hover: #694ed5;
   --secondary-purple-active: #5439c0;
   --secondary-blue: #2f4fc1;
-  --light-background: #d9f2fd;
 }
 html {
   scroll-behavior: smooth;

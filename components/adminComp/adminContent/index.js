@@ -1,13 +1,4 @@
-import { useMemo } from 'react'
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from 'react-icons/md'
-import {
-  useTable,
-  useFilters,
-  useGlobalFilter,
-  usePagination,
-  useSortBy,
-} from 'react-table'
-import { TABLE_COLUMNS } from '../../../helper/table'
 import Pagination from '../pagination'
 import s from './adminContent.module.css'
 

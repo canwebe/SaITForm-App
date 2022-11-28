@@ -1,5 +1,4 @@
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
