@@ -16,6 +16,7 @@ import {
 } from 'react-table'
 import { useFullData } from '../contexts/fullDataContext'
 import { useRouter } from 'next/router'
+import { useAuth } from '../contexts/authContext'
 
 export default function Admin() {
   const router = useRouter()
@@ -25,9 +26,18 @@ export default function Admin() {
 
   const { state: studentsList, dispatch } = useStudentList()
   const { dispatch: dispatchData } = useFullData()
+  const { user, admin } = useAuth()
 
   // Functions
   const handleData = async () => {
+    if (!user) {
+      toast.error(<b>This system is not activated. Contact CWB Team!</b>)
+      return
+    }
+    if (!admin) {
+      toast.error(<b>Login as admin first</b>)
+      return
+    }
     setIsLoading(true)
     const id = toast.loading(<b>Collecting Students List Please Wait...</b>)
     try {
@@ -135,7 +145,7 @@ export default function Admin() {
         size={studentsList?.length}
       />
 
-      {studentsList ? (
+      {studentsList && admin ? (
         <>
           <SidebarAdmin
             setAllFilters={setAllFilters}

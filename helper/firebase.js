@@ -52,7 +52,6 @@ export const getStudents = async () => {
 export const deleteStudent = async (id) => {
   const docRef = doc(db, 'students', id)
   const res = await deleteDoc(docRef)
-  console.log(res)
 }
 
 export const updateStudent = async (id, data) => {

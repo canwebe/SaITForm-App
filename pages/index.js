@@ -8,11 +8,13 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { MdArrowForward } from 'react-icons/md'
 import Homesvg from '../components/homeImg'
+import { useAuth } from '../contexts/authContext'
 
 export default function FirstForm() {
   const [isLoading, setIsLoading] = useState(false)
 
   const { name, mobile, dispatch } = useFullData()
+  const { user } = useAuth()
 
   // Router
   const router = useRouter()
@@ -26,6 +28,10 @@ export default function FirstForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!user) {
+      toast.error(<b>This system is not activated. Contact CWB Team!</b>)
+      return
+    }
     const id = toast.loading('Fetching Data..')
     setIsLoading(true)
     try {
