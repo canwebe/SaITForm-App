@@ -12,7 +12,7 @@ import Header from '../components/PrintParts/header'
 import ParentsSection from '../components/PrintParts/parentsSection'
 import StudentInfo from '../components/PrintParts/studentInfo'
 import { useFullData } from '../contexts/fullDataContext'
-import { addFullData } from '../helper/firebase'
+import { addFullData, deleteStudent } from '../helper/firebase'
 import { storage } from '../lib/firebase'
 import s from '../styles/Check.module.css'
 import uuid4 from 'uuid4'
@@ -27,14 +27,20 @@ export default function Check() {
   const [progress, setProgress] = useState(0)
 
   const printRef = useRef()
-  const { mobile, caste } = useFullData()
-
   // Getting Data
-  const { file, dispatch, ...data } = useFullData()
+  const {
+    mobile,
+    caste,
+    file,
+    dispatch,
+    id: studentId,
+    ...data
+  } = useFullData()
 
   const handleUpload = async (docId, id) => {
+    const fileRef = data?.name?.trim().toLowerCase() + mobile?.trim()
     const uploadTask = uploadBytesResumable(
-      ref(storage, 'students/' + docId),
+      ref(storage, 'students/' + fileRef),
       file
     )
     uploadTask.on(
@@ -60,6 +66,7 @@ export default function Check() {
             name: data.name.trim().toLowerCase(), //Triming white space and lowercase for searching
             mobile: mobile.trim(), //Triming white space for searching
             imgSrc: url, // Photo url
+            caste,
           },
           docId
         )
@@ -67,12 +74,32 @@ export default function Check() {
           toast.success(<b>Upload done</b>, { id })
           setIsFinalize(true)
         } else {
-          throw new Error('ALreday uploaded data found')
+          throw new Error('Alreday uploaded data found')
         }
         setIsLoading(false)
         setProgress(0)
       }
     )
+  }
+
+  const handleAdminDlt = async () => {
+    const isConfirm = prompt(
+      `Are you sure you want to delete ${data.name} data? Type 'DELETE' to confirm :`
+    )
+    if (isConfirm?.trim()?.toLowerCase() === 'delete') {
+      setIsLoading(true)
+      const toastId = toast.loading(<b>Deleting please wait!</b>)
+      try {
+        await deleteStudent(studentId)
+        toast.success(<b>Deleted successfully</b>, { id: toastId })
+      } catch (error) {
+        console.log(error.message)
+        toast.error(<b>{error.message}</b>, { id: toastId })
+      }
+      setIsLoading(false)
+    } else {
+      toast.error('Canceled delete Request!')
+    }
   }
 
   const handleClick = async () => {
@@ -95,11 +122,15 @@ export default function Check() {
     dispatch({ type: 'RESET' })
   }
 
+  const handleAdminBack = async () => {
+    router.push('/admin')
+  }
+
   useEffect(() => {
     if (!mobile) {
       router.push('/')
     }
-  }, [mobile, router])
+  }, [mobile])
 
   return (
     <div className={s.body}>
@@ -122,18 +153,48 @@ export default function Check() {
       </div>
       <div className={s.bottomBtnDiv}>
         {isFinalize ? (
-          <>
-            <button className={s.homeBtn} onClick={handleHomeBtn}>
-              Home
-            </button>
-            <ReactToPrint
-              documentTitle={`Form_S1_${data?.mobile}`}
-              trigger={() => (
-                <button className={s.printBtn}>Print this out!</button>
-              )}
-              content={() => printRef.current}
-            />
-          </>
+          studentId ? ( //If Admin Check Data
+            <>
+              <button
+                className={s.greyBtn}
+                disabled={isLoading}
+                onClick={handleAdminBack}
+              >
+                Back
+              </button>
+              <button onClick={() => router.push('/form')} disabled={isLoading}>
+                Edit
+              </button>
+              <button
+                className={s.backBtn}
+                disabled={isLoading}
+                onClick={handleAdminDlt}
+              >
+                {isLoading ? 'Loading' : 'Delete'}
+              </button>
+              <ReactToPrint
+                documentTitle={`Form_S1_${data?.mobile}`}
+                trigger={() => (
+                  <button className={s.printBtn}>Print this out!</button>
+                )}
+                content={() => printRef.current}
+              />
+            </>
+          ) : (
+            // Normal Student View
+            <>
+              <button className={s.homeBtn} onClick={handleHomeBtn}>
+                Home
+              </button>
+              <ReactToPrint
+                documentTitle={`Form_S1_${data?.mobile}`}
+                trigger={() => (
+                  <button className={s.printBtn}>Print this out!</button>
+                )}
+                content={() => printRef.current}
+              />
+            </>
+          )
         ) : (
           <>
             {progress > 0 ? (

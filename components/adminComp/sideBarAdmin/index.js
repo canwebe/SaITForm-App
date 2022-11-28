@@ -54,7 +54,7 @@ export default function SidebarAdmin({
       <h4 className={s.filterH4}>Filters</h4>
       {allColumns.map((column) => {
         if (column.canFilter && column.Filter) {
-          return column.render('Filter')
+          return <div key={column.id}>{column.render('Filter')}</div>
         }
       })}
     </div>

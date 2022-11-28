@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -44,6 +45,17 @@ export const getStudents = async () => {
   const colRef = collection(db, 'students')
   const snapshot = await getDocs(colRef)
   if (!snapshot.empty) {
-    return snapshot.docs.map((item) => item.data())
+    return snapshot.docs.map((item) => ({ ...item.data(), id: item.id }))
   }
+}
+
+export const deleteStudent = async (id) => {
+  const docRef = doc(db, 'students', id)
+  const res = await deleteDoc(docRef)
+  console.log(res)
+}
+
+export const updateStudent = async (id, data) => {
+  const docRef = doc(db, `students/${id}`)
+  await updateDoc(docRef, data)
 }

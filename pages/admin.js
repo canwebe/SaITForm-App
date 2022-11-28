@@ -14,12 +14,17 @@ import {
   useSortBy,
   useTable,
 } from 'react-table'
+import { useFullData } from '../contexts/fullDataContext'
+import { useRouter } from 'next/router'
 
 export default function Admin() {
+  const router = useRouter()
+
   // States
   const [isLoading, setIsLoading] = useState(false)
 
   const { state: studentsList, dispatch } = useStudentList()
+  const { dispatch: dispatchData } = useFullData()
 
   // Functions
   const handleData = async () => {
@@ -39,6 +44,17 @@ export default function Admin() {
       console.log(error.message)
       toast.error(<b>{error.message}</b>, { id })
       setIsLoading(false)
+    }
+  }
+
+  // handle View Btn
+  const handleView = (value) => {
+    if (value) {
+      dispatchData({ type: 'ADD_DATA', payload: value })
+      router.push({
+        pathname: '/check',
+        query: { print: true },
+      })
     }
   }
 
@@ -75,7 +91,14 @@ export default function Admin() {
       hooks.visibleColumns.push((columns) => [
         {
           Header: 'View',
-          Cell: (props) => <button className="viewBtn">View</button>,
+          Cell: ({ row }) => (
+            <button
+              onClick={() => handleView(row?.original)}
+              className="viewBtn"
+            >
+              View
+            </button>
+          ),
         },
         ...columns,
       ])
