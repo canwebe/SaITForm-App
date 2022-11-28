@@ -8,6 +8,7 @@ import {
   useSortBy,
 } from 'react-table'
 import { TABLE_COLUMNS } from '../../../helper/table'
+import Pagination from '../pagination'
 import s from './adminContent.module.css'
 
 export default function AdminContent({
@@ -23,6 +24,9 @@ export default function AdminContent({
   pageOptions,
   gotoPage,
   allColumns,
+  pageIndex,
+  pageSize,
+  setPageSize,
 }) {
   const defaultColumns = [
     'caste',
@@ -95,6 +99,17 @@ export default function AdminContent({
           })}
         </tbody>
       </table>
+      <Pagination
+        previousPage={previousPage}
+        canPreviousPage={canPreviousPage}
+        pageIndex={pageIndex}
+        pageOptions={pageOptions}
+        nextPage={nextPage}
+        canNextPage={canNextPage}
+        gotoPage={gotoPage}
+        pageSize={pageSize}
+        setPageSize={setPageSize}
+      />
       {!page.length ? <p className={s.noDataTable}>No Data Found</p> : null}
     </div>
   )

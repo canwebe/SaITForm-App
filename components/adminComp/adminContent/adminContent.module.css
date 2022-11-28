@@ -42,3 +42,78 @@
   font-size: 1.2rem;
   color: #ba0505;
 }
+
+/* Pagination */
+
+.paginationDiv {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+
+/* .paginationDiv .pageNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+} */
+
+.paginationDiv span {
+  border: 1px solid var(--secondary-blue);
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--secondary-blue);
+}
+
+.paginationDiv span:global(.active) {
+  background-color: var(--secondary-blue);
+  color: white;
+}
+.paginationDiv span:hover:not(:global(.active)) {
+  background-color: #b9b9e6;
+}
+
+.pageBtn {
+  padding: 5px 7px;
+  font-size: 1.1rem;
+  color: var(--secondary-blue);
+}
+
+.pageBtn:hover:not(:disabled) {
+  color: #0a2584;
+}
+.pageBtn:active:not(:disabled) {
+  transform: translateY(5px);
+}
+
+.paginationDiv button:disabled {
+  opacity: 0.4;
+}
+.paginationDiv p {
+  font-weight: 500;
+}
+
+.inputDiv {
+  display: flex;
+  gap: 7px;
+  margin-left: 10px;
+  align-items: center;
+}
+.inputDiv select,
+.inputDiv input {
+  border: 1px solid grey;
+  outline: none;
+  padding: 5px;
+  width: 67px;
+  text-align: center;
+}
+.inputDiv button {
+  background-color: #454545;
+  color: white;
+  padding: 6px 10px;
+}

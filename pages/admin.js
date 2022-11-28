@@ -99,9 +99,10 @@ export default function Admin() {
     setAllFilters,
     allColumns,
     preGlobalFilteredRows,
+    setPageSize,
   } = tableInstances
 
-  const { globalFilter, pageIndex, filters } = state
+  const { globalFilter, pageIndex, filters, pageSize } = state
 
   return (
     <div className={s.adminLayout}>
@@ -135,6 +136,9 @@ export default function Admin() {
             pageOptions={pageOptions}
             gotoPage={gotoPage}
             allColumns={allColumns}
+            pageIndex={pageIndex}
+            pageSize={pageSize}
+            setPageSize={setPageSize}
           />
         </>
       ) : null}
