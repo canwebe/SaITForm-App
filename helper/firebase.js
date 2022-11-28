@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -12,7 +13,7 @@ import {
 } from 'firebase/firestore'
 import { db } from '../lib/firebase'
 
-export const checkStudent = async (name, mobile,check) => {
+export const checkStudent = async (name, mobile, check) => {
   const q = query(
     collection(db, 'students'),
     where('name', '==', name.trim().toLowerCase()),
@@ -20,11 +21,11 @@ export const checkStudent = async (name, mobile,check) => {
     limit(1)
   )
   const snapshot = await getDocs(q)
-  if(check){
+  if (check) {
     return snapshot.empty
-  }else{
-    if(!snapshot.empty){
-  return snapshot.docs[0].data()
+  } else {
+    if (!snapshot.empty) {
+      return snapshot.docs[0].data()
     }
   }
 }
@@ -38,4 +39,22 @@ export const addFullData = async (data, id) => {
   } else {
     return false
   }
+}
+
+export const getStudents = async () => {
+  const colRef = collection(db, 'students')
+  const snapshot = await getDocs(colRef)
+  if (!snapshot.empty) {
+    return snapshot.docs.map((item) => ({ ...item.data(), id: item.id }))
+  }
+}
+
+export const deleteStudent = async (id) => {
+  const docRef = doc(db, 'students', id)
+  const res = await deleteDoc(docRef)
+}
+
+export const updateStudent = async (id, data) => {
+  const docRef = doc(db, `students/${id}`)
+  await updateDoc(docRef, data)
 }

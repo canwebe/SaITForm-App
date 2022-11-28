@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 40px 30px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
+  width: min(80%, 400px);
+}
+
+.form input,
+.form button {
+  padding: 8px 10px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+.form input {
+  border: 1px solid var(--secondary-blue);
+  color: var(--secondary-blue);
+}
+
+.form input::placeholder {
+  color: rgb(179, 179, 226);
+}
+
+.form button {
+  background-color: var(--primary-blue);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.form button:hover {
+  letter-spacing: 3px;
+}
+
+.form button:active {
+  background-color: var(--secondary-blue);
+}
+
+.form button:disabled {
+  opacity: 0.7;
+}
+
+.form p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.form .red {
+  background-color: rgb(160, 0, 0);
+}
+
+.form .red:active {
+  background-color: rgb(107, 0, 0);
+}

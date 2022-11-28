@@ -1,5 +1,5 @@
 import { useFullData } from '../../../contexts/fullDataContext'
-import { branchMap, courseMap } from '../../../data/data'
+import { branchMap, courseMap } from '../../../helper/data'
 import FormDiv from '../../FormDiv'
 import FormSection from '../../formSection'
 

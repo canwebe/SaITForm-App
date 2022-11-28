@@ -12,7 +12,7 @@ import toast from 'react-hot-toast'
 export default function Form() {
   const [isClick, setIsClick] = useState(false)
 
-  const { name, mobile, imgSrc } = useFullData()
+  const { name, mobile, imgSrc, id, ...data } = useFullData()
 
   const router = useRouter()
 

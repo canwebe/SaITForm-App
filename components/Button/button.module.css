@@ -1,0 +1,79 @@
+.btn {
+  padding: 8px 18px;
+  font-size: 1.13rem;
+  border-radius: 5px;
+  height: 39px;
+  transition: all 0.3s ease-in-out;
+}
+.btn:disabled {
+  opacity: 0.6;
+}
+
+.btn:global(.wide) {
+  width: 210px;
+}
+
+.btn:global(.primary) {
+  background-color: var(--secondary-blue);
+  color: white;
+}
+
+.btn:global(.red) {
+  background-color: #cf0000;
+  color: white;
+}
+
+.btn:global(.primary):hover:not(:disabled) {
+  background-color: #2644b0;
+}
+.btn:global(.red):hover:not(:disabled) {
+  background-color: #ae0707;
+}
+
+.btn:global(.primary):active:not(:disabled) {
+  background-color: #1b3799;
+}
+
+.btn:global(.red):active:not(:disabled) {
+  background-color: #900101;
+}
+
+.btn:global(.red):active:not(:disabled),
+.btn:global(.primary):active:not(:disabled) {
+  transform: translateY(3px);
+}
+
+.btn:global(.small) {
+  font-size: 0.9rem;
+  height: 30px;
+  padding: 8px 10px;
+}
+
+.btn:global(.border-red) {
+  border: 1px solid #cf0000;
+  color: #cf0000;
+  background-color: #f0c5c5;
+}
+.btn:global(.border-blue) {
+  border: 1px solid #0029cf;
+  color: #0029cf;
+  background-color: #c8deef;
+}
+
+.btn:global(.border-red):hover {
+  background-color: #efb5b5;
+}
+
+.btn:global(.border-red):active {
+  color: #ffffff;
+  background-color: #e14848;
+}
+
+.btn:global(.border-blue):hover {
+  background-color: rgb(167, 207, 238);
+}
+
+.btn:global(.border-blue):active {
+  color: white;
+  background-color: #2590dd;
+}

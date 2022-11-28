@@ -6,10 +6,14 @@ import FUllDataContextProvider from '../contexts/fullDataContext'
 import '../styles/globals.css'
 import '../styles/nprogress.css'
 import nProgress from 'nprogress'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import StudentsContextProvider from '../contexts/studentsContext'
+import AuthContextProvider from '../contexts/authContext'
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
   // Configuration of NProgress
   nProgress.configure({ showSpinner: false })
 
@@ -37,15 +41,23 @@ function MyApp({ Component, pageProps }) {
         />
         <title>SaITForm</title>
       </Head>
-      <main>
-        <FUllDataContextProvider>
-          <Nav />
-          <div className="wrapper">
-            <Component {...pageProps} />
-          </div>
-          <Footer />
-        </FUllDataContextProvider>
-      </main>
+      <AuthContextProvider>
+        {router.pathname === '/activate' ? (
+          <Component {...pageProps} />
+        ) : (
+          <main>
+            <FUllDataContextProvider>
+              <Nav />
+              <div className="wrapper">
+                <StudentsContextProvider>
+                  <Component {...pageProps} />
+                </StudentsContextProvider>
+              </div>
+              {router.pathname !== '/admin' ? <Footer /> : null}
+            </FUllDataContextProvider>
+          </main>
+        )}
+      </AuthContextProvider>
       <div className="mobile">
         <p>
           This app is not supported in this width. Please use this app on

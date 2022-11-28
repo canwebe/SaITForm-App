@@ -1,0 +1,109 @@
+.adminLayout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px calc(100vh - 68.5px - 80px);
+  row-gap: 10px;
+  /* height: calc(100vh - 68.5px - 50.7px); */
+}
+
+/* Topbar */
+.topBar {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.totalStudents {
+  color: green;
+  margin-left: 5px;
+  font-weight: 500;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.userName {
+  font-weight: 600;
+}
+
+.topBar input {
+  padding: 8px 10px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Sidebar */
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  padding: 0 17px 60px 0;
+  border-right: 1px solid rgb(173, 173, 173);
+  gap: 15px;
+  overflow: auto;
+}
+
+.sideBar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sideBar::-webkit-scrollbar-track {
+  background-color: rgb(249, 251, 255);
+  border-radius: 50vw;
+}
+
+.sideBar::-webkit-scrollbar-thumb {
+  background-color: rgb(175, 175, 175);
+  border-radius: 50vw;
+}
+
+.sideBar input,
+.sideBar select {
+  outline: none;
+  width: 100%;
+
+  border-radius: 4px;
+}
+.sideBar input {
+  padding: 9px 10px;
+  font-size: 1.1rem;
+  border: 2px solid rgb(50, 50, 50);
+}
+.sideBar select {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid rgb(96, 96, 96);
+}
+
+.sideBar input:active,
+.sideBar select:active,
+.sideBar input:focus,
+.sideBar select:focus {
+  border-color: var(--secondary-blue);
+  color: var(--secondary-blue);
+}
+
+.filterInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filtersInfo {
+  display: flex;
+  gap: 7px 5px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.stickyTop {
+  position: sticky;
+  top: 0;
+  background-color: var(--body-background);
+  padding-block: 15px;
+}
+
+.filterH4 {
+  margin-bottom: -8px;
+}
