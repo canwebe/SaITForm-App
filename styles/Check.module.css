@@ -14,15 +14,16 @@
 }
 
 .bottomBtnDiv {
-  display: grid;
+  display: flex;
   margin-top: 20px;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px 15px;
+  gap: 15px;
   padding: 30px 40px;
 }
+.bottomBtnDiv > * {
+  flex-basis: 100%;
+}
 
-.bottomBtnDiv button,
-.bottomBtnDiv .homeBtn {
+.bottomBtnDiv button {
   background-color: var(--secondary-blue);
   color: white;
   padding: 10px;
@@ -37,6 +38,10 @@
 
 .bottomBtnDiv .printBtn {
   background-color: rgb(7, 103, 7);
+}
+
+.bottomBtnDiv .greyBtn {
+  background-color: #898989;
 }
 
 /* Print Section */

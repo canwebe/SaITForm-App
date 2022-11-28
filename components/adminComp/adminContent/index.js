@@ -99,18 +99,21 @@ export default function AdminContent({
           })}
         </tbody>
       </table>
-      <Pagination
-        previousPage={previousPage}
-        canPreviousPage={canPreviousPage}
-        pageIndex={pageIndex}
-        pageOptions={pageOptions}
-        nextPage={nextPage}
-        canNextPage={canNextPage}
-        gotoPage={gotoPage}
-        pageSize={pageSize}
-        setPageSize={setPageSize}
-      />
-      {!page.length ? <p className={s.noDataTable}>No Data Found</p> : null}
+      {!page.length ? (
+        <p className={s.noDataTable}>No Data Found</p>
+      ) : (
+        <Pagination
+          previousPage={previousPage}
+          canPreviousPage={canPreviousPage}
+          pageIndex={pageIndex}
+          pageOptions={pageOptions}
+          nextPage={nextPage}
+          canNextPage={canNextPage}
+          gotoPage={gotoPage}
+          pageSize={pageSize}
+          setPageSize={setPageSize}
+        />
+      )}
     </div>
   )
 }

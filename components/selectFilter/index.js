@@ -13,7 +13,7 @@ export default function SelectFilter({
   }, [id])
 
   return (
-    <div key={id} className={s.filterInputs}>
+    <div className={s.filterInputs}>
       <label>{Header}</label>
       <select
         value={filterValue || ''}

@@ -14,13 +14,17 @@
 .ulDiv input {
   margin-top: 15px;
 }
-.nextBtn {
-  background-color: var(--secondary-purple);
+.nextBtn,
+.btnDiv button {
   padding: 10px;
-  font-size: 1.5rem;
   color: white;
-  font-weight: 600;
   border-radius: 7px;
+}
+
+.nextBtn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: var(--secondary-purple);
 }
 
 .nextBtn:hover {
@@ -29,4 +33,20 @@
 
 .nextBtn:active {
   background-color: var(--secondary-purple-active);
+}
+
+.btnDiv {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btnDiv > * {
+  flex-basis: 100%;
+}
+.btnDiv button {
+  font-size: 1.1rem;
+  background-color: var(--secondary-blue);
+}
+.btnDiv button:nth-child(2) {
+  background-color: green;
 }
