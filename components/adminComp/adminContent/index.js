@@ -1,6 +1,7 @@
+import dynamic from 'next/dynamic'
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from 'react-icons/md'
-import Pagination from '../pagination'
 import s from './adminContent.module.css'
+const Pagination = dynamic(() => import('../pagination'))
 
 export default function AdminContent({
   getTableProps,
