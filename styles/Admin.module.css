@@ -27,6 +27,13 @@
   font-weight: 600;
 }
 
+.topBar input {
+  padding: 8px 10px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
 /* Sidebar */
 .sideBar {
   display: flex;

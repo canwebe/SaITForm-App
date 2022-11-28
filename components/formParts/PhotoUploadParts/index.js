@@ -39,7 +39,6 @@ export default function PhotoUploadParts({ setIsClick }) {
 
     const snapshot = await uploadBytes(uploadRef, file)
     const url = await getDownloadURL(snapshot.ref)
-    console.log(url)
     toast.success(<b>Done file uploading</b>, { id })
     setIsLoading(false)
   }

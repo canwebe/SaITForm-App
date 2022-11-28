@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import toast from 'react-hot-toast'
 import { MdHighlightOff, MdSearch } from 'react-icons/md'
+import { useAuth } from '../../contexts/authContext'
 import { checkStudent } from '../../helper/firebase'
 import styles from './modal.module.css'
 
@@ -8,6 +9,7 @@ export default function Modal({ setIsModal, handleSuccess }) {
   const nameRef = useRef()
   const numberRef = useRef()
   const [isLoading, setIsLoading] = useState(false)
+  const { user } = useAuth()
 
   const handleModal = (e) => {
     if (e.target.classList.contains(styles.wrapper)) {
@@ -17,6 +19,10 @@ export default function Modal({ setIsModal, handleSuccess }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!user) {
+      toast.error(<b>This system is not activated. Contact CWB Team!</b>)
+      return
+    }
     const id = toast.loading(<b>Getting Info..</b>)
     setIsLoading(true)
     try {
