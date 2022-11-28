@@ -1,4 +1,4 @@
-import { INITIAL_STATE } from '../data/data'
+import { INITIAL_STATE } from '../helper/data'
 
 export default function FullDataReducer(state, action) {
   switch (action.type) {

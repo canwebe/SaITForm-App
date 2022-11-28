@@ -24,7 +24,6 @@ export default function Modal({ setIsModal, handleSuccess }) {
       const number = numberRef.current.value
       const res = await checkStudent(name, number)
       if (res) {
-        console.log(res)
         toast.success(<b>Candidate info found</b>, { id })
         setIsLoading(false)
         handleSuccess(res)

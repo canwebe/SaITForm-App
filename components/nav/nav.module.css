@@ -27,8 +27,13 @@
   font-weight: 500;
 }
 
-.link:hover {
+.link:hover:not(:global(.active)) {
   color: var(--secondary-purple-active);
+}
+
+.link:global(.active) {
+  color: var(--secondary-blue);
+  font-weight: 600;
 }
 
 .btnNew {

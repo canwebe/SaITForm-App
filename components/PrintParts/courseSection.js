@@ -2,7 +2,7 @@ import PrintSection from './printSection'
 import s from '../../styles/Check.module.css'
 import FieldBox from './fieldBox'
 import CheckBox from './checkBox'
-import { branchMap } from '../../data/data'
+import { branchMap } from '../../helper/data'
 import { useFullData } from '../../contexts/fullDataContext'
 
 export default function CourseSection() {
