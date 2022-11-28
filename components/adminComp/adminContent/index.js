@@ -55,10 +55,13 @@ export default function AdminContent({
 
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+          {headerGroups.map((headerGroup, i) => (
+            <tr key={i} {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, j) => (
+                <th
+                  key={j}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                >
                   <span className="flex">
                     {column.render('Header')}
 
@@ -78,12 +81,14 @@ export default function AdminContent({
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
+          {page.map((row, i) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+              <tr key={i} {...row.getRowProps()}>
+                {row.cells.map((cell, j) => (
+                  <td key={j} {...cell.getCellProps()}>
+                    {cell.render('Cell')}
+                  </td>
                 ))}
               </tr>
             )

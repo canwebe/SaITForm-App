@@ -13,7 +13,11 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.totalStudents {
+  color: green;
+  margin-left: 5px;
+  font-weight: 500;
+}
 .userInfo {
   display: flex;
   align-items: center;
@@ -91,4 +95,8 @@
   top: 0;
   background-color: var(--body-background);
   padding-block: 15px;
+}
+
+.filterH4 {
+  margin-bottom: -8px;
 }

@@ -12,7 +12,9 @@ export default function TopBar({ handleData, isLoading, size }) {
             ? 'Refresh Data'
             : 'Get Students Data'}
         </Button>
-        {size ? <p>Total Students Found : {size}</p> : null}
+        {size ? (
+          <p className={s.totalStudents}>Total Students Found : {size}</p>
+        ) : null}
       </div>
 
       <div className={s.userInfo}>

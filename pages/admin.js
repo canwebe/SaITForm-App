@@ -102,7 +102,6 @@ export default function Admin() {
   } = tableInstances
 
   const { globalFilter, pageIndex, filters } = state
-  console.log('bbcb', preGlobalFilteredRows)
 
   return (
     <div className={s.adminLayout}>
