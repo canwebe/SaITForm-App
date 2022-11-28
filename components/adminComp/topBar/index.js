@@ -45,7 +45,6 @@ export default function TopBar({ handleData, isLoading, size }) {
     localStorage.removeItem('admin')
     dispatch({ type: 'ADMIN_LOGOUT' })
   }
-  console.log(admin, 'admin')
 
   return (
     <div className={s.topBar}>
