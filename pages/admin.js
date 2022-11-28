@@ -75,9 +75,7 @@ export default function Admin() {
       hooks.visibleColumns.push((columns) => [
         {
           Header: 'View',
-          Cell: (props) => (
-            <button className="viewBtn">View {console.log(props)}</button>
-          ),
+          Cell: (props) => <button className="viewBtn">View</button>,
         },
         ...columns,
       ])
@@ -104,8 +102,8 @@ export default function Admin() {
   } = tableInstances
 
   const { globalFilter, pageIndex, filters } = state
+  console.log('bbcb', preGlobalFilteredRows)
 
-  console.log(tableInstances, state)
   return (
     <div className={s.adminLayout}>
       <TopBar
@@ -113,30 +111,33 @@ export default function Admin() {
         isLoading={isLoading}
         size={studentsList?.length}
       />
-      <SidebarAdmin
-        setAllFilters={setAllFilters}
-        setFilter={setFilter}
-        setGlobalFilter={setGlobalFilter}
-        filter={globalFilter}
-        filters={filters}
-        preGlobalFilteredRows={preGlobalFilteredRows}
-        allColumns={allColumns}
-      />
+
       {studentsList ? (
-        <AdminContent
-          getTableProps={getTableProps}
-          getTableBodyProps={getTableBodyProps}
-          headerGroups={headerGroups}
-          page={page}
-          prepareRow={prepareRow}
-          nextPage={nextPage}
-          previousPage={previousPage}
-          canNextPage={canNextPage}
-          canPreviousPage={canPreviousPage}
-          pageOptions={pageOptions}
-          gotoPage={gotoPage}
-          allColumns={allColumns}
-        />
+        <>
+          <SidebarAdmin
+            setAllFilters={setAllFilters}
+            setFilter={setFilter}
+            setGlobalFilter={setGlobalFilter}
+            filter={globalFilter}
+            filters={filters}
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            allColumns={allColumns}
+          />
+          <AdminContent
+            getTableProps={getTableProps}
+            getTableBodyProps={getTableBodyProps}
+            headerGroups={headerGroups}
+            page={page}
+            prepareRow={prepareRow}
+            nextPage={nextPage}
+            previousPage={previousPage}
+            canNextPage={canNextPage}
+            canPreviousPage={canPreviousPage}
+            pageOptions={pageOptions}
+            gotoPage={gotoPage}
+            allColumns={allColumns}
+          />
+        </>
       ) : null}
     </div>
   )

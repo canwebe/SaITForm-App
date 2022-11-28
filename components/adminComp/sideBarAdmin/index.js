@@ -37,12 +37,11 @@ export default function SidebarAdmin({
         optionSet.add(element.values[id])
       })
       return [...optionSet.values()]
-    }, [id, preFilteredRows])
+    }, [id])
 
     return (
       <div className={s.filterInputs}>
         <label>{placeholder}</label>
-        {console.log(filterValue)}
         <select
           value={filterValue || ''}
           onChange={(e) => {

@@ -90,6 +90,7 @@ export default function AdminContent({
           })}
         </tbody>
       </table>
+      {!page.length ? <p className={s.noDataTable}>No Data Found</p> : null}
     </div>
   )
 }

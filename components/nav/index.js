@@ -33,7 +33,6 @@ export default function Nav() {
     setIsModal(true)
   }
 
-  console.log(router.pathname)
   return (
     <nav>
       <div className="wrapper">

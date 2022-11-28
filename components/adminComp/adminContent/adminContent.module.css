@@ -34,3 +34,11 @@
 .adminContent h3 {
   color: grey;
 }
+
+.noDataTable {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ba0505;
+}
