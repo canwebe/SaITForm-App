@@ -13,10 +13,10 @@ export default function CourseSection() {
     <PrintSection title="Course Information" low={true}>
       <div className={s.printFlex}>
         <FieldBox label="Degree">
-          <div className={s.upperCase}>{degree}</div>
+          <div className={s.upperCase}>{degree?.toUpperCase()}</div>
         </FieldBox>
         <FieldBox label="Course">
-          <div className={s.upperCase}>{course}</div>
+          <div className={s.upperCase}>{course?.toUpperCase()}</div>
         </FieldBox>
         {branch ? (
           <FieldBox label="Branch">

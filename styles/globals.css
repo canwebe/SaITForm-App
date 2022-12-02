@@ -146,16 +146,6 @@ input[type='number'] {
   text-align: center;
 }
 
-/* For Print */
-@media print {
-  html,
-  body {
-    height: initial !important;
-    overflow: initial !important;
-    -webkit-print-color-adjust: exact;
-  }
-}
-
 @media screen and (max-width: 1000px) {
   main {
     display: none;
@@ -187,19 +177,6 @@ tr:nth-child(even) {
 tr:hover {
   background-color: rgb(208, 205, 248);
 }
-/* .teacherLists td:nth-child(2) {
-  text-transform: uppercase;
-}
-.studentLists td:nth-child(2),
-.studentLists td:nth-child(4),
-.studentLists td:nth-child(6) {
-  text-transform: uppercase;
-}
-
-
-.studentLists td {
-  text-align: center;
-} */
 
 td:nth-child(1),
 td:nth-child(8),
@@ -236,32 +213,21 @@ td {
   text-transform: capitalize;
 }
 
-/* .teacherLists th:not(:nth-child(4), :nth-child(7)) {
-  min-width: 115px;
-  position: relative;
-}
-
-.studentLists th:not(:nth-child(1), :nth-child(8)) {
-  min-width: 115px;
-  position: relative;
-}
-
-table .iconSort {
-  position: absolute;
-  right: 6px;
-  top: 8px;
-  font-size: 1.6rem;
-}
-
-.teacherLists .editBtn,
-.studentLists .editBtn {
-  color: red;
-  font-weight: 600;
-  width: 100%;
-} */
-
 .viewBtn {
   color: #5c60d4;
   font-weight: 600;
   width: 100%;
+}
+
+/* For Print */
+@media print {
+  html,
+  body {
+    height: initial !important;
+    overflow: initial !important;
+    -webkit-print-color-adjust: exact;
+  }
+  table {
+    margin-bottom: 5px;
+  }
 }
