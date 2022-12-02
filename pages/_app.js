@@ -32,6 +32,10 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])
 
+  console.log(
+    'Looks like you are on the wrong place, There is nothing here .If you want to work with us contact teamCanWeBe!'
+  )
+
   return (
     <>
       <Head>

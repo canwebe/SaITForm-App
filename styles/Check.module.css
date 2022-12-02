@@ -16,11 +16,12 @@
 .bottomBtnDiv {
   display: flex;
   margin-top: 20px;
-  gap: 15px;
+  gap: 26px 15px;
   padding: 30px 40px;
+  flex-wrap: wrap;
 }
 .bottomBtnDiv > * {
-  flex-basis: 100%;
+  flex-grow: 1;
 }
 
 .bottomBtnDiv button {
@@ -244,7 +245,7 @@
 
 /* Progress Bar */
 .progressDiv {
-  grid-column: span 2;
+  width: 100%;
   background-color: #ebe9e9;
   height: 10px;
   border-radius: 25px;

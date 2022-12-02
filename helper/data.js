@@ -237,6 +237,18 @@ export const religionData = [
     name: 'Sikhism',
     value: 'sikhism',
   },
+  {
+    name: 'Buddhism',
+    value: 'buddhism',
+  },
+  {
+    name: 'Jainism',
+    value: 'jainism',
+  },
+  {
+    name: 'Other',
+    value: 'other',
+  },
 ]
 
 export const casteData = [
@@ -255,5 +267,9 @@ export const casteData = [
   {
     name: 'OBC',
     value: 'obc',
+  },
+  {
+    name: 'Other',
+    value: 'other',
   },
 ]

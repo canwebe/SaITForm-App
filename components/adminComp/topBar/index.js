@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import toast from 'react-hot-toast'
 import { useAuth } from '../../../contexts/authContext'
 import s from '../../../styles/Admin.module.css'
@@ -45,7 +45,6 @@ export default function TopBar({ handleData, isLoading, size }) {
     localStorage.removeItem('admin')
     dispatch({ type: 'ADMIN_LOGOUT' })
   }
-  console.log(admin, 'admin')
 
   return (
     <div className={s.topBar}>

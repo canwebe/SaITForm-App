@@ -1,8 +1,5 @@
 import toast from 'react-hot-toast'
 import { useState, useMemo } from 'react'
-import AdminContent from '../components/adminComp/adminContent'
-import SidebarAdmin from '../components/adminComp/sideBarAdmin'
-import TopBar from '../components/adminComp/topBar'
 import { useStudentList } from '../contexts/studentsContext'
 import { getStudents } from '../helper/firebase'
 import s from '../styles/Admin.module.css'
@@ -17,6 +14,15 @@ import {
 import { useFullData } from '../contexts/fullDataContext'
 import { useRouter } from 'next/router'
 import { useAuth } from '../contexts/authContext'
+import dynamic from 'next/dynamic'
+
+const TopBar = dynamic(() => import('../components/adminComp/topBar'))
+const SidebarAdmin = dynamic(() =>
+  import('../components/adminComp/sideBarAdmin')
+)
+const AdminContent = dynamic(() =>
+  import('../components/adminComp/adminContent')
+)
 
 export default function Admin() {
   const router = useRouter()

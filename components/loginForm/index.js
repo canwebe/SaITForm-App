@@ -4,7 +4,6 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useAuth } from '../../contexts/authContext'
 import { auth } from '../../lib/firebase'
-import Button from '../Button'
 import s from './loginForm.module.css'
 
 export default function LoginForm() {

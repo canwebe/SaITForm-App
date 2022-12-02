@@ -1,6 +1,5 @@
 import { useFullData } from '../../contexts/fullDataContext'
 import s from '../../styles/Check.module.css'
-import FormSection from '../formSection'
 import CheckBox from './checkBox'
 import FieldBox from './fieldBox'
 import PrintSection from './printSection'

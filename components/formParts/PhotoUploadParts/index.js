@@ -32,17 +32,6 @@ export default function PhotoUploadParts({ setIsClick }) {
     dispatch({ type: 'CHANGE_IMG', file: selected, url })
   }
 
-  // Handle Upload Photo
-  const handleUpload = async (docId, id) => {
-    const fileRef = data?.name?.trim().toLowerCase() + data?.mobile?.trim()
-    const uploadRef = ref(storage, 'students/' + fileRef)
-
-    const snapshot = await uploadBytes(uploadRef, file)
-    const url = await getDownloadURL(snapshot.ref)
-    toast.success(<b>Done file uploading</b>, { id })
-    setIsLoading(false)
-  }
-
   // Handle Update Function
   const handleUpdate = async (e) => {
     e.preventDefault()
