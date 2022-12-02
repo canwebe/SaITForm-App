@@ -172,7 +172,7 @@ export default function Check() {
                 {isLoading ? 'Loading' : 'Delete'}
               </button>
               <ReactToPrint
-                documentTitle={`Form_S1_${data?.mobile}`}
+                documentTitle={`Form_S1_${mobile || 'SaIT'}`}
                 trigger={() => (
                   <button className={s.printBtn}>Print this out!</button>
                 )}
@@ -186,7 +186,7 @@ export default function Check() {
                 Home
               </button>
               <ReactToPrint
-                documentTitle={`Form_S1_${data?.mobile}`}
+                documentTitle={`Form_S1_${mobile || 'SaIT'}`}
                 trigger={() => (
                   <button className={s.printBtn}>Print this out!</button>
                 )}

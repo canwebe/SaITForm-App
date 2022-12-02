@@ -114,6 +114,7 @@
   z-index: 1;
   border-radius: 7px;
   word-break: break-all;
+  align-items: center;
 }
 
 .fieldBox span {
@@ -233,14 +234,83 @@
   .formCard {
     padding: 0;
   }
-  .printSection:global(.low) {
-    margin-top: 0;
+  /* Print */
+  .formCard {
+    max-width: 833px;
+    font-size: 60%;
+  }
+
+  .fieldBox {
+    gap: 5px;
+    padding: 6px 5px;
+    border-radius: 5px;
+  }
+
+  .printSection {
+    padding: 20px 7px 12px;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .table th {
+    padding: 8px 5px;
+  }
+
+  .table td {
+    padding: 6px 5px;
+  }
+
+  .checkItem svg {
+    font-size: 0.8rem;
+  }
+
+  .checkBox .checkItem {
+    gap: 2px;
+  }
+
+  .printSection h3 {
+    font-size: 1rem;
+    top: -11px;
+  }
+
+  .printFlex,
+  .printGrid {
+    gap: 7px;
+  }
+
+  .declarationDiv .info {
+    font-size: 0.7rem;
+    line-height: 20px;
+  }
+
+  .declarationDiv.high,
+  .declarationDiv {
+    margin-top: 30px;
+  }
+
+  .declarationDiv h2 {
+    margin-bottom: 40px;
+  }
+
+  .declarationDiv .bottomDiv {
+    margin-top: 40px;
+  }
+  .imgDiv {
+    width: 90px;
+    top: 6.5px;
+  }
+  .header {
+    margin-bottom: 80px;
   }
 }
 
 @page {
   size: auto;
   margin: 30px 10px 20px;
+}
+
+@page :left {
+  margin-top: 0;
 }
 
 /* Progress Bar */

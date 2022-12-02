@@ -38,7 +38,7 @@ export default function StudentInfo() {
   return (
     <PrintSection title="Student Information">
       <div className={s.printFlex}>
-        <FieldBox label="Name">{name}</FieldBox>
+        <FieldBox label="Name">{name?.toUpperCase()}</FieldBox>
         <FieldBox label="DOB">{new Date(dob).toDateString()}</FieldBox>
         <FieldBox label="Gender">
           <CheckBox
@@ -51,10 +51,10 @@ export default function StudentInfo() {
         </FieldBox>
       </div>
       <div className={s.printFlex}>
-        <FieldBox label="State">{state}</FieldBox>
-        <FieldBox label="Nationality">{nationality}</FieldBox>
-        <FieldBox label="Religion">{religion}</FieldBox>
-        <FieldBox label="Caste">{caste}</FieldBox>
+        <FieldBox label="State">{state?.toUpperCase()}</FieldBox>
+        <FieldBox label="Nationality">{nationality?.toUpperCase()}</FieldBox>
+        <FieldBox label="Religion">{religion?.toUpperCase()}</FieldBox>
+        <FieldBox label="Caste">{caste?.toUpperCase()}</FieldBox>
       </div>
       <div className={s.printFlex}>
         <FieldBox label="Student Mobile No">{mobile}</FieldBox>

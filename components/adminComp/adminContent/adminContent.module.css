@@ -55,12 +55,6 @@
   margin-bottom: 50px;
 }
 
-/* .paginationDiv .pageNumbers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-} */
-
 .paginationDiv span {
   border: 1px solid var(--secondary-blue);
   height: 30px;
